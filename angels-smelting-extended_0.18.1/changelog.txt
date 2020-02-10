@@ -1,0 +1,60 @@
+---------------------------------------------------------------------------------------------------
+Version: 0.18.0
+  Features:
+    - Updated to 0.18
+---------------------------------------------------------------------------------------------------
+Version: 0.17.5
+  Features:
+    - Added composite icons, to help differentiate between uncoiling and straight plate production
+    - Added a setting to use angels icons or the current ones
+---------------------------------------------------------------------------------------------------
+Version: 0.17.4
+  Bugfixes:
+    - Corrected oversight with respect to icon size missing on some recipes
+---------------------------------------------------------------------------------------------------
+Version: 0.17.3
+  Features:
+    - Added more compression recipes (metal coils)
+    - Changed the colours of the new alloy coils to match the liquid flow schemes
+    - Removed duplicate recipes (copies of angels default ones)
+    - Re-worked tech for new coils to be T2 of the tech to leave room for an improved sequence later
+---------------------------------------------------------------------------------------------------
+Version: 0.17.2
+  Bugfixes:
+    - Fixed Tin coil unlock location (tin 3, not alloys 1)
+    - Recoloured the Tin coil to be less baby spew green (thanks SuperSandro for the colour fix)
+    - Recoloured the Nitinol and Bronze coil to be a bit closer to the plate colour
+---------------------------------------------------------------------------------------------------
+Version: 0.17.1
+  Features:
+    - Migrated to 0.17
+    - Added productivity to uncoiling recipes and some ironworks recipes
+    - Increased yields in some ironworks recipes (still needs balance)
+    - Added compression recipes for bronze, brass, tin, nitinol
+---------------------------------------------------------------------------------------------------
+Version: 0.0.3
+  Features:
+    - "p.o.d" final 0.15 variant changelog
+    - changed alloys recipes to match Angels Alloys smelting approach (mixing ingots, not liquids)
+    - added Copper compression
+  Bugfixes:
+    - fixed casting times on Brass compression
+    - fixed Brass Sheet Coil icon
+---------------------------------------------------------------------------------------------------
+Version: 0.0.2
+  Bugfixes:
+    - updated mod description
+---------------------------------------------------------------------------------------------------
+Version: 0.0.1
+  Features:
+    - INITIAL RELEASE
+    - added Brass, Bronze, Gunmetal, Invar, Electrum, Nitinol, Cobalt-Steel casting plates recipes
+    - added Iron, Brass compression recipes
+    - added Iron, Steel, Brass, Titanium Gear Wheel casting using molten metals
+    - added Iron pipes casting using molten metals
+    - added Advanced Alloys Smelting Technology 1 (Brass, Bronze)
+      2 (Gunmetal, Invar)
+      and 3 (Electrum, Nitinol)
+    - added Advanced Ironworks Technology 1 (Iron compression, Iron Gear Wheel, Iron Pipes)
+      2(Steel Gear Wheel, Brass compression, Brass Gear Wheel)
+      3(Titanium Gear Wheel)
