@@ -5,8 +5,8 @@ data:extend({
     name = "solid-pvc",
     icon = "__PCPRedux__/graphics/icons/solid-polyvinyl-chloride.png",
     icon_size = 32,
-    subgroup = "petrochem-raw",
-    order = "a[solid-pvc]",
+    subgroup = "petrochem-solids-fluids",
+    order = "d[solid-pvc]",
     stack_size = 1
   },
   {
@@ -14,8 +14,8 @@ data:extend({
     name = "solid-abs",
     icon = "__PCPRedux__/graphics/icons/solid-acrylonitrile-butadiene-styrene.png",
     icon_size = 32,
-    subgroup = "petrochem-raw",
-    order = "a[solid-abs]",
+    subgroup = "petrochem-solids-fluids",
+    order = "d[solid-abs]",
     stack_size = 1
   },
   {
@@ -23,8 +23,8 @@ data:extend({
     name = "solid-pmma",
     icon = "__PCPRedux__/graphics/icons/solid-polymethyl-methacrylate.png",
     icon_size = 32,
-    subgroup = "petrochem-raw",
-    order = "a[solid-pmma]",
+    subgroup = "petrochem-solids-fluids",
+    order = "d[solid-pmma]",
     stack_size = 100
   },
   {
@@ -32,8 +32,8 @@ data:extend({
     name = "solid-pc",
     icon = "__PCPRedux__/graphics/icons/solid-polycarbonate.png",
     icon_size = 32,
-    subgroup = "petrochem-raw",
-    order = "a[solid-pc]",
+    subgroup = "petrochem-solids-fluids",
+    order = "d[solid-pc]",
     stack_size = 100
   },
   --misc
@@ -42,7 +42,7 @@ data:extend({
     name = "solid-ammonium-sulphate",
     icon = "__PCPRedux__/graphics/icons/solid-ammonium-sulphate.png",
     icon_size = 32,
-    subgroup = "petrochem-raw",
+    subgroup = "petrochem-sulfur",
     order = "a[solid-ammonium-sulphate]",
     stack_size = 100
   },
@@ -51,7 +51,7 @@ data:extend({
     name = "solid-sodium-nitrate",
     icon = "__PCPRedux__/graphics/icons/solid-sodium-nitrate.png",
     icon_size = 32,
-    subgroup = "petrochem-raw",
+    subgroup = "petrochem-sodium",
     order = "a[solid-sodium-nitrate]",
     stack_size = 100
   },
@@ -60,7 +60,7 @@ data:extend({
     name = "catalyst-metal-cyan",
     icon = "__PCPRedux__/graphics/icons/catalyst-metal-cyan.png",
     icon_size = 32,
-    subgroup = "petrochem-raw",
+    subgroup = "petrochem-catalysts",
     order = "e[catalyst-metal-cyan]",
     stack_size = 100
   },
@@ -70,7 +70,7 @@ data:extend({
     name = "solid-rubber-additive",
     icon="__PCPRedux__/graphics/icons/solid-rubber-additive.png",
     icon_size = 64,
-    subgroup = "petrochem-raw",
+    subgroup = "petrochem-solids",
     order = "f[rubber-additive]",
     stack_size = 100
   },
@@ -79,7 +79,7 @@ data:extend({
     name = "solid-rubber-block",
     icon="__PCPRedux__/graphics/icons/solid-rubber-block.png",
     icon_size = 64,
-    subgroup = "petrochem-raw",
+    subgroup = "petrochem-solids",
     order = "f[rubber-block]",
     stack_size = 100
   },
@@ -88,7 +88,7 @@ data:extend({
     name = "solid-rubber-slab",
     icon="__PCPRedux__/graphics/icons/solid-rubber-slab.png",
     icon_size = 64,
-    subgroup = "petrochem-raw",
+    subgroup = "petrochem-solids",
     order = "f[rubber-slab]",
     stack_size = 100
   },
@@ -97,7 +97,7 @@ data:extend({
     name = "solid-rubber-pellet",
     icon="__PCPRedux__/graphics/icons/solid-rubber-pellet.png",
     icon_size = 64,
-    subgroup = "petrochem-raw",
+    subgroup = "petrochem-solids",
     order = "f[rubber-pellet]",
     stack_size = 100
   },
@@ -106,7 +106,7 @@ data:extend({
     name = "solid-rubber-powder",
     icon="__PCPRedux__/graphics/icons/solid-rubber-powder.png",
     icon_size = 64,
-    subgroup = "petrochem-raw",
+    subgroup = "petrochem-solids",
     order = "f[rubber-powder]",
     stack_size = 100
   },
@@ -115,7 +115,7 @@ data:extend({
     name = "solid-rubber-vulcanised",
     icon="__angelspetrochem__/graphics/icons/solid-rubber.png",
     icon_size = 32,
-    subgroup= "petrochem-raw",
+    subgroup= "petrochem-solids",
     order = "f[rubber-vulcanised]",
     stack_size = 100
   },
@@ -124,7 +124,7 @@ data:extend({
     name = "solid-rubber-waste",
     icon="__PCPRedux__/graphics/icons/solid-rubber-waste.png",
     icon_size = 64,
-    subgroup= "petrochem-raw",
+    subgroup= "petrochem-solids",
     order = "f[rubber-waste]",
     stack_size = 100
   },
@@ -132,7 +132,7 @@ data:extend({
     type = "item",
     name = "angels-roll-rubber",
     icons={{icon = "__PCPRedux__/graphics/icons/roll-blank.png", tint = {r = 0, g = 0, b = 0},icon_size=32}},
-    subgroup = "petrochem-raw",
+    subgroup = "petrochem-solids",
     order = "ya",
     stack_size = 200
   },

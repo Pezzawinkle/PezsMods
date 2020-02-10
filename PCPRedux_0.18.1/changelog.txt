@@ -1,4 +1,10 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.18.1
+  Bugfixes:
+    - Patched Item/Fluid grouping issues from Angels updates
+Features:
+    - Removed gas bottle system (now integrated into base angels with some improvements)
+---------------------------------------------------------------------------------------------------
 Version: 0.18.0
   Features:
     - Updated to 0.18

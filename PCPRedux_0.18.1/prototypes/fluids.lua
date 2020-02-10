@@ -14,7 +14,7 @@ data:extend({
     type = "fluid",
     name = "liquid-dichlorobutene", --c4h6cl2
     icons =generate_fluid_icons("dichlorobutene","clh","liq"),
-    subgroup = "fluids-petro",
+    subgroup = "petrochem-chlorine-fluids",
     default_temperature = 25,
     heat_capacity = "0.1KJ",
     base_color = {r = 172/255, g = 172/255, b = 172/255}, --C4H6
@@ -28,7 +28,7 @@ data:extend({
     type = "fluid",
     name = "liquid-chlorobutadiene",
     icons =generate_fluid_icons("chlorobutadiene","clh","liq"),
-    subgroup = "fluids-petro",
+    subgroup = "petrochem-chlorine-fluids",
     default_temperature = 25,
     heat_capacity = "1KJ",
     base_color = {r = 44/255, g = 44/255, b = 114/255}, -- CN
@@ -42,7 +42,7 @@ data:extend({
     type = "fluid",
     name = "gas-hydrogen-cyanide",
     icons =generate_fluid_icons("hydrogen_cyanide","chn","gas"),
-    subgroup = "fluids-petro",
+    subgroup = "petrochem-chlorine-fluids",
     default_temperature = 25,
     heat_capacity = "1KJ",
     base_color = {r = 44/255, g = 44/255, b = 114/255}, -- CN
@@ -56,7 +56,7 @@ data:extend({
     type = "fluid",
     name = "liquid-acetone-cyanohydrin",
     icons =generate_fluid_icons("acetone_cyanohydrin","cno","liq"),
-    subgroup = "fluids-petro",
+    subgroup = "petrochem-chlorine-fluids",
     default_temperature = 25,
     heat_capacity = "1KJ",
     base_color = {r = 63/255, g = 63/255, b = 85/255}, --C4H7N {taken as (C3, H7) blended with 1 N}
@@ -70,7 +70,7 @@ data:extend({
     type = "fluid",
     name = "liquid-acrylonitrile",
     icons =generate_fluid_icons("acrylonitrile","chn","liq"),
-    subgroup = "fluids-petro",
+    subgroup = "petrochem-chlorine-fluids",
     default_temperature = 25,
     heat_capacity = "1KJ",
     base_color = {r = 151/255, g = 151/255, b = 151/255}, -- C3H3
@@ -84,7 +84,7 @@ data:extend({
     type = "fluid",
     name = "liquid-methyl-methacrylate",
     icons =generate_fluid_icons("methyl_methacrylate","cho","liq"),
-    subgroup = "fluids-petro",
+    subgroup = "petrochem-chlorine-fluids",
     default_temperature = 25,
     heat_capacity = "1KJ",
     base_color = {r = 186/255, g = 186/255, b = 186/255}, --C5H8 {taken as (C4, H8)}
@@ -98,7 +98,7 @@ data:extend({
     type = "fluid",
     name = "gas-vinyl-chloride",
     icons =generate_fluid_icons("vinyl_chloride","clh","gas"),
-    subgroup = "fluids-petro",
+    subgroup = "petrochem-chlorine-fluids",
     default_temperature = 25,
     heat_capacity = "1KJ",
     base_color = {r = 172/255, g = 172/255, b = 172/255}, --C2H3
@@ -112,7 +112,7 @@ data:extend({
     type = "fluid",
     name = "gas-acetylene",
     icons =generate_fluid_icons("acetylene","cch","gas"),
-    subgroup = "fluids-petro",
+    subgroup = "petrochem-chlorine-fluids",
     default_temperature = 25,
     heat_capacity = "1KJ",
     base_color = {r = 172/255, g = 172/255, b = 172/255}, --C2H3
@@ -126,7 +126,7 @@ data:extend({
     type = "fluid",
     name = "gas-vinyl-acetylene",
     icons =generate_fluid_icons("vinyl_acetylene","cch","gas"),
-    subgroup = "fluids-petro",
+    subgroup = "petrochem-chlorine-fluids",
     default_temperature = 25,
     heat_capacity = "1KJ",
     base_color = {r = 172/255, g = 172/255, b = 172/255}, --C2H3
@@ -140,7 +140,7 @@ data:extend({
     type = "fluid",
     name = "gas-nitrous-oxide",
     icons =generate_fluid_icons("nitrous_oxide","nno","gas"),
-    subgroup = "fluids-petro",
+    subgroup = "petrochem-chlorine-fluids",
     default_temperature = 25,
     heat_capacity = "1KJ",
     base_color = {r = 41/255, g = 41/255, b = 180/255}, --NN
@@ -154,7 +154,7 @@ data:extend({
     type = "fluid",
     name = "liquid-lactic-acid",
     icons =generate_fluid_icons("lactic_acid","coh","liq"),
-    subgroup = "fluids-petro",
+    subgroup = "petrochem-chlorine-fluids",
     default_temperature = 25,
     heat_capacity = "1KJ",
     base_color = {r = 1, g = 1, b = 1},
@@ -168,7 +168,7 @@ data:extend({
     type = "fluid",
     name = "liquid-rubber-pre",
     icons ={{icon="__PCPRedux__/graphics/icons/liquid-rubber-pre.png",icon_size=64}},
-    subgroup = "fluids-petro",
+    subgroup = "petrochem-chlorine-fluids",
     default_temperature = 25,
     heat_capacity = "1KJ",
     base_color = {r = 1, g = 1, b = 1},
@@ -182,7 +182,7 @@ data:extend({
     type = "fluid",
     name = "liquid-rubber-masterbatch",
     icons={{icon="__PCPRedux__/graphics/icons/liquid-rubber-masterbatch.png",icon_size=64}},
-    subgroup = "fluids-petro",
+    subgroup = "petrochem-chlorine-fluids",
     default_temperature = 25,
     heat_capacity = "1KJ",
     base_color = {r = 1, g = 1, b = 1},
