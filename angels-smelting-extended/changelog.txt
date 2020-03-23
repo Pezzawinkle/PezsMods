@@ -1,6 +1,14 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.18.0
   Features:
+    - Added Angels Industries support
+    - Added pipe smelting if bobs logistics is on
+    - Added gear smelting if bobs is installed/component parts if angels industry
+    - Decoupled most functions from bobs (so now runs without)
+      - Best paired with at least 1 optional dependancy
+---------------------------------------------------------------------------------------------------
+Version: 0.18.0
+  Features:
     - Updated to 0.18
 ---------------------------------------------------------------------------------------------------
 Version: 0.17.5
