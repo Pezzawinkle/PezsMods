@@ -1,7 +1,5 @@
-Icon updates for new tiers of coil production (including numbers)
 add new tier of coil production
 add tech for new tier coils
-add pipe recipe creation script
 add productivity to recipes for gears (non-mold ones)
 balance assuming max prod so non-expend>expend>basic>bobs
 localisation for new changes

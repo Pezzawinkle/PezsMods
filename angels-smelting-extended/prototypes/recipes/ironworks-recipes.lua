@@ -1,6 +1,14 @@
+require("prototypes.data-tables")
 --Ironworks recipes
 -- IRONWORKS -- This needs rebalancing, and extension to cobalt-steel gears etc...
-data:extend({
+
+
+
+
+
+--SET-UP BASE CASTING RECIPES TO COPY LATER
+data:extend(
+{
   {
     type = "recipe",
     name = "angels-iron-pipe-casting",
@@ -33,78 +41,49 @@ data:extend({
     },
     order = "yb",
   },
-  {
-    type = "recipe",
-    name = "angels-iron-gear-wheel-casting",
-    category = "casting",
-    subgroup = "angels-iron-casting",
-    energy_required = 2,
-    enabled = "false",
-    ingredients ={
-      {type="fluid", name="liquid-molten-iron", amount=40},
-    },
-    results=
-    {
-      {type="item", name="iron-gear-wheel", amount=9},
-    },
-    order = "yc",
-  },
-  {
-    type = "recipe",
-    name = "angels-steel-gear-wheel-casting",
-    category = "casting",
-    subgroup = "angels-steel-casting",
-    energy_required = 4,
-    enabled = "false",
-    ingredients ={
-      {type="fluid", name="liquid-molten-steel", amount=40},
-    },
-    results=
-    {
-      {type="item", name="steel-gear-wheel", amount=12},
-    },
-    order = "yc",
-  },
-  {
-    type = "recipe",
-    name = "angels-brass-gear-wheel-casting",
-    category = "casting",
-    subgroup = "angels-brass-casting",
-    energy_required = 20,
-    enabled = "false",
-    ingredients ={
-      {type="fluid", name="liquid-molten-brass", amount=40},
-    },
-    results=
-    {
-      {type="item", name="brass-gear-wheel", amount=12},
-    },
-    order = "yc",
-  },
-  {
-    type = "recipe",
-    name = "angels-titanium-gear-wheel-casting",
-    category = "casting",
-    subgroup = "angels-titanium-casting",
-    energy_required = 4,
-    enabled = "false",
-    ingredients ={
-      {type="fluid", name="liquid-molten-titanium", amount=40},
-    },
-    results=
-    {
-      {type="item", name="titanium-gear-wheel", amount=12},
-    },
-    order = "yc",
-  },
 })
---Advanced Casting 1 (using moulds)
+-- bobs pipe casting
+if mods["boblogistics"] and mods["bobplates"] then
+  --call pipe metal types (metal_tab)
+  for n,metal in pairs(metal_tab) do
+    --metal straight pipes
+    local m_pipe=table.deepcopy(data.raw.recipe["angels-iron-pipe-casting"])
+    m_pipe.name="angels-"..metal.."-pipe-casting"
+    m_pipe.subgroup="angels-"..metal.."-casting"
+    m_pipe.ingredients ={{type="fluid", name="liquid-molten-"..metal, amount=40},}
+    m_pipe.results={{type="item", name=metal.."-pipe", amount=4},}
+    --metal UG pipes
+    local u_pipe=table.deepcopy(data.raw.recipe["angels-iron-pipe-to-ground-casting"])
+    local ug_multi={
+      ["copper"]=150,
+      ["steel"]=170,
+      ["titanium"]=210,
+      ["brass"]=190,
+      ["bronze"]=170,
+      ["nitinol"]=230,
+      ["tungsten"]=21
+    }
+    --iron is 15x for UG
+    u_pipe.name="angels-"..metal.."-pipe-to-ground-casting"
+    u_pipe.subgroup="angels-"..metal.."-casting"
+    u_pipe.ingredients ={{type="fluid", name="liquid-molten-"..metal, amount=ug_multi[metal]},}
+    u_pipe.results={{type="item", name=metal.."-pipe-to-ground", amount=1},}
+    --tungsten-fixes
+    if metal=="tungsten" then
+      m_pipe.ingredients[1]={type="item", name="casting-powder-tungsten", amount=4}
+      m_pipe.category = "sintering"
+      u_pipe.ingredients[1]={type="item", name="casting-powder-tungsten", amount=ug_multi[metal]}
+      u_pipe.category = "sintering"
+    end
+    data:extend({m_pipe,u_pipe})
+  end
+end
+--SETTING UP MOLD ITEMS and RECIPES
 data:extend({
-  --temporary location: mold recipe sequences
   --expendable mold recipe (want roasted)
   {
     type = "recipe",
-    name="mold-expendable",
+    name="ASE-mold-expendable",
     category="smelting",
     subgroup="angels-mold-casting",
     energy_required= 8,
@@ -128,7 +107,7 @@ data:extend({
   --non-expendable mold recipe (initial)
   {
     type = "recipe",
-    name="mold-non-expendable",
+    name="ASE-mold-non-expendable",
     category="smelting",
     subgroup="angels-mold-casting",
     icons={
@@ -158,9 +137,9 @@ data:extend({
   --spent-non-expendable mold
   {
     type = "item",
-    name = "spent-mold-non-expendable",
+    name = "ASE-spent-mold-non-expendable",
     icon = "__angelssmelting__/graphics/icons/non-expendable-mold.png",
-	icon_size = 32,
+    icon_size = 32,
     subgroup = "angels-mold-casting",
     order = "b",
     stack_size = 200
@@ -168,7 +147,7 @@ data:extend({
   --non-expendable mold washing
   {
     type = "recipe",
-    name="mold-non-expendable-wash",
+    name="ASE-mold-non-expendable-wash",
     category="crafting-with-fluid",
     subgroup="angels-mold-casting",
     energy_required= 8,
@@ -187,7 +166,7 @@ data:extend({
     },
     icon_size=32,
     ingredients={
-      {type="item", name="spent-mold-non-expendable",amount=3},
+      {type="item", name="ASE-spent-mold-non-expendable",amount=3},
       {type="fluid",name="liquid-nitric-acid", amount=20}
     },
     results={
@@ -196,7 +175,27 @@ data:extend({
     },
     order="ae",
   },
-  --iron gears
+})
+--SET-UP BASE CASTING RECIPES TO COPY LATER
+--iron gears
+data:extend(
+{
+  {
+    type = "recipe",
+    name = "angels-iron-gear-wheel-casting",
+    category = "casting",
+    subgroup = "angels-iron-casting",
+    energy_required = 2,
+    enabled = "false",
+    ingredients ={
+      {type="fluid", name="liquid-molten-iron", amount=40},
+    },
+    results=
+    {
+      {type="item", name="iron-gear-wheel", amount=9},
+    },
+    order = "yc",
+  },
   {
     type = "recipe",
     name = "ASE-iron-gear-casting-expendable",
@@ -214,7 +213,7 @@ data:extend({
         scale = 0.32,
         shift = {-12, -12},
       },
-  },
+    },
     ingredients ={
       {type="fluid", name="liquid-molten-iron", amount=80},
       {type="item", name="mold-expendable",amount=2}
@@ -243,7 +242,7 @@ data:extend({
         scale = 0.32,
         shift = {-12, -12},
       },
-  },
+    },
     ingredients ={
       {type="fluid", name="liquid-molten-iron", amount=80},
       {type="item", name="mold-non-expendable",amount=3},
@@ -251,448 +250,104 @@ data:extend({
     results=
     {
       {type="item", name="iron-gear-wheel", amount=15},
-      {type="item", name="spent-mold-non-expendable",amount=3},
+      {type="item", name="ASE-spent-mold-non-expendable",amount=3},
     },
     order = "ye",
-  },
-  --steel gears
-  {
-    type = "recipe",
-    name = "ASE-steel-gear-casting-expendable",
-    category = "casting",
-    subgroup = "angels-steel-casting",
-    energy_required = 0.5,
-    enabled = "false",
-    icons={
-      {
-        icon="__bobplates__/graphics/icons/steel-gear-wheel.png",icon_size=32,
-      },
-      {
-        icon = "__angelssmelting__/graphics/icons/expendable-mold.png",
-        icon_size = 32,
-        scale = 0.32,
-        shift = {-12, -12},
-      },
-  },
-    ingredients ={
-      {type="fluid", name="liquid-molten-steel", amount=80},
-      {type="item", name="mold-expendable",amount=2}
-    },
-    results=
-    {
-      {type="item", name="steel-gear-wheel", amount=11},
-      {type="item", name="solid-sand", amount=5},
-    },
-    order = "yd",
-  },
-  {
-    type = "recipe",
-    name = "ASE-steel-gear-casting-advanced",
-    category = "casting",
-    subgroup = "angels-steel-casting",
-    energy_required = 0.5,
-    enabled = "false",
-    icons={
-      {
-        icon="__bobplates__/graphics/icons/steel-gear-wheel.png",icon_size=32,
-      },
-      {
-        icon = "__angelssmelting__/graphics/icons/non-expendable-mold.png",
-        icon_size = 32,
-        scale = 0.32,
-        shift = {-12, -12},
-      },
-  },
-    ingredients ={
-      {type="fluid", name="liquid-molten-steel", amount=80},
-      {type="item", name="mold-non-expendable",amount=3},
-    },
-    results=
-    {
-      {type="item", name="steel-gear-wheel", amount=15},
-      {type="item", name="spent-mold-non-expendable",amount=3},
-    },
-    order = "ye",
-  },
-  --Brass gear wheels
-  {
-    type = "recipe",
-    name = "ASE-brass-gear-casting-expendable",
-    category = "casting",
-    subgroup = "angels-brass-casting",
-    energy_required = 0.5,
-    enabled = "false",
-    icons={
-      {
-        icon="__bobplates__/graphics/icons/brass-gear-wheel.png",icon_size=32,
-      },
-      {
-        icon = "__angelssmelting__/graphics/icons/expendable-mold.png",
-        icon_size = 32,
-        scale = 0.32,
-        shift = {-12, -12},
-      },
-  },
-    ingredients ={
-      {type="fluid", name="liquid-molten-brass", amount=80},
-      {type="item", name="mold-expendable",amount=2}
-    },
-    results=
-    {
-      {type="item", name="brass-gear-wheel", amount=11},
-      {type="item", name="solid-sand", amount=5},
-    },
-    order = "yd",
-  },
-  {
-    type = "recipe",
-    name = "ASE-brass-gear-casting-advanced",
-    category = "casting",
-    subgroup = "angels-brass-casting",
-    energy_required = 0.5,
-    enabled = "false",
-    icons={
-      {
-        icon="__bobplates__/graphics/icons/brass-gear-wheel.png",icon_size=32,
-      },
-      {
-        icon = "__angelssmelting__/graphics/icons/non-expendable-mold.png",
-        icon_size = 32,
-        scale = 0.32,
-        shift = {-12, -12},
-      },
-  },
-    ingredients ={
-      {type="fluid", name="liquid-molten-brass", amount=80},
-      {type="item", name="mold-non-expendable",amount=3},
-    },
-    results=
-    {
-      {type="item", name="brass-gear-wheel", amount=15},
-      {type="item", name="spent-mold-non-expendable",amount=3},
-    },
-    order = "ye",
-  },
-  --cobalt-steel gear wheels
-  {
-    type = "recipe",
-    name = "ASE-cobalt-steel-gear-casting-expendable",
-    category = "casting",
-    subgroup = "angels-cobalt-steel-casting",
-    energy_required = 0.5,
-    enabled = "false",
-    icons={
-      {
-        icon="__bobplates__/graphics/icons/cobalt-steel-gear-wheel.png",icon_size=32,
-      },
-      {
-        icon = "__angelssmelting__/graphics/icons/expendable-mold.png",
-        icon_size = 32,
-        scale = 0.32,
-        shift = {-12, -12},
-      },
-  },
-    ingredients ={
-      {type="fluid", name="liquid-molten-cobalt-steel", amount=80},
-      {type="item", name="mold-expendable",amount=2}
-    },
-    results=
-    {
-      {type="item", name="cobalt-steel-gear-wheel", amount=11},
-      {type="item", name="solid-sand", amount=5},
-    },
-    order = "yd",
-  },
-  {
-    type = "recipe",
-    name = "ASE-cobalt-steel-gear-casting-advanced",
-    category = "casting",
-    subgroup = "angels-cobalt-steel-casting",
-    energy_required = 0.5,
-    enabled = "false",
-    icons={
-      {
-        icon="__bobplates__/graphics/icons/cobalt-steel-gear-wheel.png",icon_size=32,
-      },
-      {
-        icon = "__angelssmelting__/graphics/icons/non-expendable-mold.png",
-        icon_size = 32,
-        scale = 0.32,
-        shift = {-12, -12},
-      },
-  },
-    ingredients ={
-      {type="fluid", name="liquid-molten-cobalt-steel", amount=80},
-      {type="item", name="mold-non-expendable",amount=3},
-    },
-    results=
-    {
-      {type="item", name="cobalt-steel-gear-wheel", amount=15},
-      {type="item", name="spent-mold-non-expendable",amount=3},
-    },
-    order = "ye",
-  },
-  {
-    type = "recipe",
-    name = "angels-cobalt-steel-gear-wheel-casting",
-    category = "casting",
-    subgroup = "angels-cobalt-steel-casting",
-    energy_required = 20,
-    enabled = "false",
-    ingredients ={
-      {type="fluid", name="liquid-molten-cobalt-steel", amount=40},
-    },
-    results=
-    {
-      {type="item", name="cobalt-steel-gear-wheel", amount=12},
-    },
-    order = "yc",
-  },
-  --titanium gears
-  {
-    type = "recipe",
-    name = "ASE-titanium-gear-casting-expendable",
-    category = "casting",
-    subgroup = "angels-titanium-casting",
-    energy_required = 0.5,
-    enabled = "false",
-    icons={
-      {
-        icon="__bobplates__/graphics/icons/titanium-gear-wheel.png",icon_size=32,
-      },
-      {
-        icon = "__angelssmelting__/graphics/icons/expendable-mold.png",
-        icon_size = 32,
-        scale = 0.32,
-        shift = {-12, -12},
-      },
-  },
-    ingredients ={
-      {type="fluid", name="liquid-molten-titanium", amount=80},
-      {type="item", name="mold-expendable",amount=2}
-    },
-    results=
-    {
-      {type="item", name="titanium-gear-wheel", amount=11},
-      {type="item", name="solid-sand", amount=5},
-    },
-    order = "yd",
-  },
-  {
-    type = "recipe",
-    name = "ASE-titanium-gear-casting-advanced",
-    category = "casting",
-    subgroup = "angels-titanium-casting",
-    energy_required = 0.5,
-    enabled = "false",
-    icons={
-      {
-        icon="__bobplates__/graphics/icons/titanium-gear-wheel.png",icon_size=32,
-      },
-      {
-        icon = "__angelssmelting__/graphics/icons/non-expendable-mold.png",
-        icon_size = 32,
-        scale = 0.32,
-        shift = {-12, -12},
-      },
-  },
-    ingredients ={
-      {type="fluid", name="liquid-molten-titanium", amount=80},
-      {type="item", name="mold-non-expendable",amount=3},
-    },
-    results=
-    {
-      {type="item", name="titanium-gear-wheel", amount=15},
-      {type="item", name="spent-mold-non-expendable",amount=3},
-    },
-    order = "ye",
-  },
-  --tungsten gears
-  {
-    type = "recipe",
-    name = "ASE-tungsten-gear-casting-expendable",
-    category = "sintering",
-    subgroup = "angels-tungsten-casting",
-    energy_required = 0.5,
-    enabled = "false",
-    icons={
-      {
-        icon="__bobplates__/graphics/icons/tungsten-gear-wheel.png",icon_size=32,
-      },
-      {
-        icon = "__angelssmelting__/graphics/icons/expendable-mold.png",
-        icon_size = 32,
-        scale = 0.32,
-        shift = {-12, -12},
-      },
-  },
-    ingredients ={
-      {type="item", name="casting-powder-tungsten", amount=12},
-      {type="item", name="mold-expendable",amount=2}
-    },
-    results=
-    {
-      {type="item", name="tungsten-gear-wheel", amount=11},
-      {type="item", name="solid-sand", amount=5},
-    },
-    order = "yd",
-  },
-  {
-    type = "recipe",
-    name = "ASE-tungsten-gear-casting-advanced",
-    category = "sintering",
-    subgroup = "angels-tungsten-casting",
-    energy_required = 0.5,
-    enabled = "false",
-    icons={
-      {
-        icon="__bobplates__/graphics/icons/tungsten-gear-wheel.png",icon_size=32,
-      },
-      {
-        icon = "__angelssmelting__/graphics/icons/non-expendable-mold.png",
-        icon_size = 32,
-        scale = 0.32,
-        shift = {-12, -12},
-      },
-  },
-    ingredients ={
-      {type="item", name="casting-powder-tungsten", amount=12},
-      {type="item", name="mold-non-expendable",amount=3},
-    },
-    results=
-    {
-      {type="item", name="tungsten-gear-wheel", amount=15},
-      {type="item", name="spent-mold-non-expendable",amount=3},
-    },
-    order = "ye",
-  },
-  {
-    type = "recipe",
-    name = "angels-tungsten-gear-wheel-casting",
-    category = "sintering",
-    subgroup = "angels-tungsten-casting",
-    energy_required = 4,
-    enabled = "false",
-    ingredients ={
-      {type="item", name="casting-powder-tungsten", amount=12},
-    },
-    results=
-    {
-      {type="item", name="tungsten-gear-wheel", amount=12},
-    },
-    order = "yc",
-  },
-  --nitinol gear wheels
-  {
-    type = "recipe",
-    name = "ASE-nitinol-gear-casting-expendable",
-    category = "casting",
-    subgroup = "angels-nitinol-casting",
-    energy_required = 0.5,
-    enabled = "false",
-    icons={
-      {
-        icon="__bobplates__/graphics/icons/nitinol-gear-wheel.png",icon_size=32,
-      },
-      {
-        icon = "__angelssmelting__/graphics/icons/expendable-mold.png",
-        icon_size = 32,
-        scale = 0.32,
-        shift = {-12, -12},
-      },
-  },
-    ingredients ={
-      {type="fluid", name="liquid-molten-nitinol", amount=80},
-      {type="item", name="mold-expendable",amount=2}
-    },
-    results=
-    {
-      {type="item", name="nitinol-gear-wheel", amount=11},
-      {type="item", name="solid-sand", amount=5},
-    },
-    order = "yd",
-  },
-  {
-    type = "recipe",
-    name = "ASE-nitinol-gear-casting-advanced",
-    category = "casting",
-    subgroup = "angels-nitinol-casting",
-    energy_required = 0.5,
-    enabled = "false",
-    icons={
-      {
-        icon="__bobplates__/graphics/icons/nitinol-gear-wheel.png",icon_size=32,
-      },
-      {
-        icon = "__angelssmelting__/graphics/icons/non-expendable-mold.png",
-        icon_size = 32,
-        scale = 0.32,
-        shift = {-12, -12},
-      },
-  },
-    ingredients ={
-      {type="fluid", name="liquid-molten-nitinol", amount=80},
-      {type="item", name="mold-non-expendable",amount=3},
-    },
-    results=
-    {
-      {type="item", name="nitinol-gear-wheel", amount=15},
-      {type="item", name="spent-mold-non-expendable",amount=3},
-    },
-    order = "ye",
-  },
-  {
-    type = "recipe",
-    name = "angels-nitinol-gear-wheel-casting",
-    category = "casting",
-    subgroup = "angels-nitinol-casting",
-    energy_required = 20,
-    enabled = "false",
-    ingredients ={
-      {type="fluid", name="liquid-molten-nitinol", amount=40},
-    },
-    results=
-    {
-      {type="item", name="nitinol-gear-wheel", amount=12},
-    },
-    order = "yc",
   },
 })
---[[if mods["boblogistics"] then
-  data:extend(
-  {
+if mods["bobplates"] then
+for n,metal in pairs(gears) do
+    -- regular casting
+    local m_gear1=table.deepcopy(data.raw.recipe["angels-iron-gear-wheel-casting"])
+    m_gear1.name = "angels-"..metal.."-gear-wheel-casting"
+    m_gear1.subgroup = "angels-"..metal.."-casting"
+    m_gear1.ingredients ={{type="fluid", name="liquid-molten-"..metal, amount=40},}
+    m_gear1.results={{type="item", name=metal.."-gear-wheel", amount=9},}
+    -- expendable casting
+    local m_gear2=table.deepcopy(data.raw.recipe["ASE-iron-gear-casting-expendable"])
+    m_gear2.name = "ASE-"..metal.."-gear-casting-expendable"
+    m_gear2.subgroup = "angels-"..metal.."-casting"
+    m_gear2.icons[1]={icon="__bobplates__/graphics/icons/"..metal.."-gear-wheel.png",icon_size=32,}
+    m_gear2.ingredients ={
+      {type="fluid", name="liquid-molten-"..metal, amount=80},
+      {type="item", name="mold-expendable",amount=2}
+    }
+    m_gear2.results=
     {
-      type = "recipe",
-      name = "angels-iron-pipe-casting",
-      category = "casting",
-      subgroup = "angels-iron-casting",
-      energy_required = 4,
-      enabled = "false",
-      ingredients ={
-        {type="fluid", name="liquid-molten-iron", amount=40},
-      },
-      results=
-      {
-        {type="item", name="pipe", amount=4},
-      },
-      order = "ya",
-    },
+      {type="item", name= metal.."-gear-wheel", amount=11},
+      {type="item", name="solid-sand", amount=5},
+    }
+    -- non-expendable casting
+    local m_gear3=table.deepcopy(data.raw.recipe["ASE-iron-gear-casting-advanced"])
+    m_gear3.name = "ASE-"..metal.."-gear-casting-advanced"
+    m_gear3.subgroup = "angels-"..metal.."-casting"
+    m_gear3.icons[1]={icon="__bobplates__/graphics/icons/"..metal.."-gear-wheel.png",icon_size=32,}
+    m_gear3.ingredients ={
+      {type="fluid", name="liquid-molten-"..metal, amount=80},
+      {type="item", name="mold-non-expendable",amount=3},
+    }
+    m_gear3.results=
     {
-      type = "recipe",
-      name = "angels-iron-pipe-to-ground-casting",
-      category = "casting",
-      subgroup = "angels-iron-casting",
-      energy_required = 2,
-      enabled = "false",
-      ingredients ={
-        {type="fluid", name="liquid-molten-iron", amount=150},
-      },
-      results=
-      {
-        {type="item", name="pipe-to-ground", amount=2},
-      },
-      order = "yb",
-    },
-  }
-)
-end]]
+      {type="item", name=metal.."-gear-wheel", amount=15},
+      {type="item", name="ASE-spent-mold-non-expendable",amount=3},
+    }
+    --tungsten-fixes
+    if metal=="tungsten" then
+      m_gear1.ingredients[1]={type="item", name="casting-powder-tungsten", amount=12}
+      m_gear1.category = "sintering"
+      m_gear2.ingredients[1]={type="item", name="casting-powder-tungsten", amount=12}
+      m_gear2.category = "sintering"
+      m_gear3.ingredients[1]={type="item", name="casting-powder-tungsten", amount=12}
+      m_gear3.category = "sintering"
+    end
+    data:extend({m_gear1,m_gear2,m_gear3})
+  end
+end
+if mods["angelsindustries"] and settings.startup["angels-enable-components"].value then
+
+  for item,i in pairs(a_inters) do
+    local ico_name={}
+    if i.icon then
+      ico_name=i.icon
+    else
+      ico_name=item
+    end
+    item_n = item:gsub("(%l)(%w*)", function(a,b) return string.upper(a)..b end)
+    -- regular casting
+    local m_inter1=table.deepcopy(data.raw.recipe["angels-iron-gear-wheel-casting"])
+    m_inter1.name=item.."-casting"
+    m_inter1.subgroup = "angels-"..i.metal.."-casting"
+    m_inter1.ingredients={{type="fluid", name="liquid-molten-"..i.metal, amount=60},}
+    m_inter1.results={{type="item", name=item, amount=4},}
+    m_inter1.order="z["..item.."]-c"
+    -- expendable casting
+    local m_inter2=table.deepcopy(data.raw.recipe["ASE-iron-gear-casting-expendable"])
+    m_inter2.name="ASE-"..item.."-casting-expendable"
+    m_inter2.subgroup = "angels-"..i.metal.."-casting"
+    m_inter2.localised_name = {"recipe-name.angels-advanced-expendable", item_n}
+    m_inter2.icons[1]={icon="__angelsindustries__/graphics/icons/"..ico_name..".png",icon_size=32,}
+    m_inter2.ingredients[1]={type="fluid", name="liquid-molten-"..i.metal, amount=80}
+    m_inter2.results[1]={type="item", name=item, amount=6}
+    m_inter2.order="z["..item.."]-d"
+    --non-expendable casting
+    local m_inter3=table.deepcopy(data.raw.recipe["ASE-iron-gear-casting-advanced"])
+    m_inter3.name="ASE-"..item.."-casting-advanced"
+    m_inter3.subgroup = "angels-"..i.metal.."-casting"
+    m_inter3.localised_name = {"recipe-name.angels-advanced-crafting", item_n}
+    m_inter3.icons[1]={icon="__angelsindustries__/graphics/icons/"..ico_name..".png",icon_size=32,}
+    m_inter3.ingredients[1]={type="fluid", name="liquid-molten-"..i.metal, amount=80}
+    m_inter3.results[1]={type="item", name=item, amount=8}
+    m_inter3.order="z["..item.."]-e"
+
+    --tungsten-fixes
+    if i.metal=="tungsten" then
+      m_inter1.ingredients[1]={type="item", name="casting-powder-tungsten", amount=6}
+      m_inter1.category = "sintering"
+      m_inter2.ingredients[1]={type="item", name="casting-powder-tungsten", amount=8}
+      m_inter2.category = "sintering"
+      m_inter3.ingredients[1]={type="item", name="casting-powder-tungsten", amount=8}
+      m_inter3.category = "sintering"
+    end
+    data:extend({m_inter1,m_inter2,m_inter3})
+  end
+end
