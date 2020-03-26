@@ -6,11 +6,11 @@ if settings.startup["ASE-angels-coil-icons"].value==true then
     ReplaceRollIcons("bronze")
     ReplaceRollIcons("nitinol")
   end
-  --these are now actually vanilla angels rolls
-  ReplaceRollIcons("gold")
-  ReplaceRollIcons("lead")
-  ReplaceRollIcons("tin")
-  ReplaceRollIcons("silver")
-  ReplaceRollIcons("nickel")
+  --some of these are now actually vanilla angels rolls
+  --ReplaceRollIcons("gold")
+  --ReplaceRollIcons("lead")
+  --ReplaceRollIcons("tin")
+  --ReplaceRollIcons("silver")
+  --ReplaceRollIcons("nickel")
   ReplaceRollIcons("tungsten")
 end

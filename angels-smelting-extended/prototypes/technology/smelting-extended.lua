@@ -173,7 +173,7 @@ if mods["bobplates"] then
       order = "c-a"
     },
   })
-  if not settings.startup["angels-enable-components"].value then
+  if mods["angelsindustries"] and not settings.startup["angels-enable-components"].value then
     data:extend({
       {
         type = "technology",

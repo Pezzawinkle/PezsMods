@@ -1,5 +1,9 @@
 ---------------------------------------------------------------------------------------------------
-Version: 0.18.0
+Version: 0.18.2
+  Features:
+    - Fixed Icon size and lookup errors relating to using the angels icons setting
+---------------------------------------------------------------------------------------------------
+Version: 0.18.1
   Features:
     - Added Angels Industries support
     - Added pipe smelting if bobs logistics is on

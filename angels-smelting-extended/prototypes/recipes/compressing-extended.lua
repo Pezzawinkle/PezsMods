@@ -18,7 +18,7 @@ data:extend({
       {type="item", name="fluorite-ore", amount=3},
     },
     order = "g",
-    icons={{icon = "__angels-smelting-extended__/graphics/icons/roll-blank.png", tint = {r = 136/255, g = 98/255, b = 65/255},  icon_size=32}},
+    icons={{icon = "__angels-smelting-extended__/graphics/icons/roll-blank.png",  icon_size=32 , tint = {r = 136/255, g = 98/255, b = 65/255}}},
   },
   {
     type = "recipe",
@@ -345,7 +345,7 @@ if mods["bobplates"] then
           icon_size=32
         },
         {
-          icon = "__angelspetrochem__/graphics/icons/num_2.png",
+          icon = "__angelsrefining__/graphics/icons/num_2.png",
           tint = {r = 0.8, g = 0.8, b = 0.8, a = 0.5},
           scale = 0.32,
           shift = {-12, -12},
