@@ -97,10 +97,7 @@ if mods["bobplates"] then
   end
 end
 --find activation settings
-log("check industries activation settings")
 if mods["angelsindustries"] and (settings.startup["angels-enable-components"].value or settings.startup["angels-enable-tech"].value) then
-  log("hello")
-  log(serpent.block(a_inters))
   for item,i in pairs(a_inters) do
     angelsmods.functions.OV.add_unlock(i.tech,item.."-casting")
     angelsmods.functions.OV.add_unlock(i.tech,"ASE-"..item.."-casting-expendable")
@@ -108,7 +105,6 @@ if mods["angelsindustries"] and (settings.startup["angels-enable-components"].va
   end
   --check for also bobs
   if mods["bobplates"] then --replace icon gear icons
-    log("who")
     data.raw.recipe["ASE-iron-gear-casting-expendable"].icons[1]={icon="__angelsindustries__/graphics/icons/gear.png",icon_size=32,}
     data.raw.recipe["ASE-iron-gear-casting-advanced"].icons[1]={icon="__angelsindustries__/graphics/icons/gear.png",icon_size=32,}
   end
