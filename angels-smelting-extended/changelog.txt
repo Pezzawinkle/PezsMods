@@ -1,6 +1,10 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.18.3
+  Bugfixes:
+    - Fixed trigger lookup errors relating to using the angels industries setting
+---------------------------------------------------------------------------------------------------
 Version: 0.18.2
-  Features:
+  Bugfixes:
     - Fixed Icon size and lookup errors relating to using the angels icons setting
 ---------------------------------------------------------------------------------------------------
 Version: 0.18.1

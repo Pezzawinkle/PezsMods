@@ -303,7 +303,7 @@ for n,metal in pairs(gears) do
     data:extend({m_gear1,m_gear2,m_gear3})
   end
 end
-if mods["angelsindustries"] and settings.startup["angels-enable-components"].value then
+if mods["angelsindustries"] and (settings.startup["angels-enable-components"].value or settings.startup["angels-enable-tech"].value) then
 
   for item,i in pairs(a_inters) do
     local ico_name={}

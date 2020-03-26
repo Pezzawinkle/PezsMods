@@ -4,6 +4,7 @@ require("prototypes.items.compression-extended")
 
 require("prototypes.recipes.compressing-extended")
 require("prototypes.recipes.ironworks-recipes")
+angelsmods.trigger.smelting_products["steel"].powder = true -- enforce steel powder on for molds
 
 require("prototypes.technology.smelting-extended")
 

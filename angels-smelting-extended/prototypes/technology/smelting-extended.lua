@@ -175,8 +175,10 @@ if mods["bobplates"] then
     },
   })
   --if bobs metals and not angels industries components
-  if mods["angelsindustries"] and (angelsmods.industries.components or angelsmods.industries.tech) then
+  if mods["angelsindustries"] and (settings.startup["angels-enable-components"].value or settings.startup["angels-enable-tech"].value) then
+    log("kill condition")
   else
+    log("keep condition")
     data:extend({
       {
         type = "technology",
@@ -382,7 +384,8 @@ if mods["bobplates"] then
     })
   end --if angels components
 end
-if mods["angelsindustries"] and (angelsmods.industries.components or angelsmods.industries.tech) then
+if mods["angelsindustries"] and (settings.startup["angels-enable-components"].value or settings.startup["angels-enable-tech"].value) then
+  log("industries condition")
   data:extend({
     {
       type = "technology",
