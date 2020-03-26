@@ -1,3 +1,4 @@
+require("prototypes.data-tables")
 angelsmods.functions.OV.add_unlock("angels-tungsten-smelting-2","angels-roll-tungsten-casting")
 angelsmods.functions.OV.add_unlock("angels-tungsten-smelting-2","angels-roll-tungsten-converting")
 angelsmods.functions.allow_productivity("angels-roll-tungsten-converting")
@@ -95,14 +96,29 @@ if mods["bobplates"] then
     end
   end
 end
-if mods["angelsindustries"] and settings.startup["angels-enable-components"].value then
+--find activation settings
+if mods["angelsindustries"] then
+  if settings.startup["angels-enable-components"].value then
+    activate=true
+  end
+  if settings.startup["angels-enable-tech"].value then
+    activate=true
+  end
+else
+  activate=false
+end
+log("hello")
+if activate=="true" then
+  log("im here")
   for item,i in pairs(a_inters) do
     angelsmods.functions.OV.add_unlock(i.tech,item.."-casting")
     angelsmods.functions.OV.add_unlock(i.tech,"ASE-"..item.."-casting-expendable")
     angelsmods.functions.OV.add_unlock(i.tech,"ASE-"..item.."-casting-advanced")
   end
 end
-if mods["bobplates"] and mods["angelsindustries"] and settings.startup["angels-enable-components"].value then
+log("knock-knock")
+if mods["bobplates"] and mods["angelsindustries"] and activate=="true" then
+  log("who")
   data.raw.recipe["ASE-iron-gear-casting-expendable"].icons[1]={icon="__angelsindustries__/graphics/icons/gear.png",icon_size=32,}
   data.raw.recipe["ASE-iron-gear-casting-advanced"].icons[1]={icon="__angelsindustries__/graphics/icons/gear.png",icon_size=32,}
 end

@@ -39,6 +39,7 @@ data:extend(
     order = "c-a"
   },
 })
+--if bobs metals
 if mods["bobplates"] then
   data:extend({
     {
@@ -173,7 +174,9 @@ if mods["bobplates"] then
       order = "c-a"
     },
   })
-  if mods["angelsindustries"] and not settings.startup["angels-enable-components"].value then
+  --if bobs metals and not angels industries components
+  if mods["angelsindustries"] and (angelsmods.industries.components or angelsmods.industries.tech) then
+  else
     data:extend({
       {
         type = "technology",
@@ -377,55 +380,56 @@ if mods["bobplates"] then
         order = "c-a"
       },
     })
-  else
-    data:extend({
-      {
-        type = "technology",
-        name = "angels-ironworks-2",
-        icons ={
-          { icon="__angelsindustries__/graphics/technology/components-tech.png", icon_size = 64,},
-        },
-        upgrade = true,
-        prerequisites =
-        {
-          "angels-steel-smelting-1",
-          "angels-alloys-smelting-1",
-          "angels-ironworks-1",
-        },
-        effects =
-        {
-          {
-            type = "unlock-recipe",
-            recipe = "ASE-mold-expendable"
-          },
-          {
-            type = "unlock-recipe",
-            recipe = "ASE-iron-gear-casting-expendable"
-          },
-          {
-            type = "unlock-recipe",
-            recipe = "ASE-mold-non-expendable"
-          },
-          {
-            type = "unlock-recipe",
-            recipe = "ASE-mold-non-expendable-wash"
-          },
-          {
-            type = "unlock-recipe",
-            recipe = "ASE-iron-gear-casting-advanced"
-          },
-        },
-        unit =
-        {
-          count = 300,
-          ingredients = {
-            {"automation-science-pack", 1},
-            {"logistic-science-pack", 1},
-          },
-          time = 30
-        },
-        order = "c-a"
+  end --if angels components
+end
+if mods["angelsindustries"] and (angelsmods.industries.components or angelsmods.industries.tech) then
+  data:extend({
+    {
+      type = "technology",
+      name = "angels-ironworks-2",
+      icons ={
+        { icon="__angelsindustries__/graphics/technology/components-tech.png", icon_size = 64,},
       },
-    })
-  end
+      upgrade = true,
+      prerequisites =
+      {
+        "angels-steel-smelting-1",
+        "angels-alloys-smelting-1",
+        "angels-ironworks-1",
+      },
+      effects =
+      {
+        {
+          type = "unlock-recipe",
+          recipe = "ASE-mold-expendable"
+        },
+        {
+          type = "unlock-recipe",
+          recipe = "ASE-iron-gear-casting-expendable"
+        },
+        {
+          type = "unlock-recipe",
+          recipe = "ASE-mold-non-expendable"
+        },
+        {
+          type = "unlock-recipe",
+          recipe = "ASE-mold-non-expendable-wash"
+        },
+        {
+          type = "unlock-recipe",
+          recipe = "ASE-iron-gear-casting-advanced"
+        },
+      },
+      unit =
+      {
+        count = 300,
+        ingredients = {
+          {"automation-science-pack", 1},
+          {"logistic-science-pack", 1},
+        },
+        time = 30
+      },
+      order = "c-a"
+    },
+  })
 end
