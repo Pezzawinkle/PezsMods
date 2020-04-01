@@ -108,8 +108,6 @@ if mods["angelsindustries"] and angelsmods.industries.components then
     data.raw.recipe["ASE-iron-gear-casting-expendable"].icons[1]={icon="__angelsindustries__/graphics/icons/gear.png",icon_size=32,}
     data.raw.recipe["ASE-iron-gear-casting-advanced"].icons[1]={icon="__angelsindustries__/graphics/icons/gear.png",icon_size=32,}
   end
-else
-  angelsmods.functions.add_unlock("angels-ironworks-3","ASE-mold-non-expendable-wash")
 end
 -- EXECUTE OVERRIDES
 angelsmods.functions.OV.execute()
