@@ -175,10 +175,8 @@ if mods["bobplates"] then
     },
   })
   --if bobs metals and not angels industries components
-  if mods["angelsindustries"] and (settings.startup["angels-enable-components"].value or settings.startup["angels-enable-tech"].value) then
-    log("kill condition")
+  if mods["angelsindustries"] and angelsmods.industries.components then
   else
-    log("keep condition")
     data:extend({
       {
         type = "technology",
@@ -189,7 +187,6 @@ if mods["bobplates"] then
         prerequisites =
         {
           "angels-steel-smelting-1",
-          "angels-alloys-smelting-1",
           "angels-ironworks-1",
         },
         effects =
@@ -260,10 +257,10 @@ if mods["bobplates"] then
             type = "unlock-recipe",
             recipe = "ASE-mold-non-expendable"
           },
-          {
+          --[[{
             type = "unlock-recipe",
             recipe = "ASE-mold-non-expendable-wash"
-          },
+          },]]
           {
             type = "unlock-recipe",
             recipe = "ASE-iron-gear-casting-advanced"
@@ -384,8 +381,7 @@ if mods["bobplates"] then
     })
   end --if angels components
 end
-if mods["angelsindustries"] and (settings.startup["angels-enable-components"].value or settings.startup["angels-enable-tech"].value) then
-  log("industries condition")
+if mods["angelsindustries"] and angelsmods.industries.components then
   data:extend({
     {
       type = "technology",
@@ -397,7 +393,7 @@ if mods["angelsindustries"] and (settings.startup["angels-enable-components"].va
       prerequisites =
       {
         "angels-steel-smelting-1",
-        "angels-alloys-smelting-1",
+        --"angels-alloys-smelting-1",
         "angels-ironworks-1",
       },
       effects =

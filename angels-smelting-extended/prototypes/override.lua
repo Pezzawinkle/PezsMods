@@ -97,7 +97,7 @@ if mods["bobplates"] then
   end
 end
 --find activation settings
-if mods["angelsindustries"] and (settings.startup["angels-enable-components"].value or settings.startup["angels-enable-tech"].value) then
+if mods["angelsindustries"] and angelsmods.industries.components then
   for item,i in pairs(a_inters) do
     angelsmods.functions.OV.add_unlock(i.tech,item.."-casting")
     angelsmods.functions.OV.add_unlock(i.tech,"ASE-"..item.."-casting-expendable")
@@ -108,6 +108,8 @@ if mods["angelsindustries"] and (settings.startup["angels-enable-components"].va
     data.raw.recipe["ASE-iron-gear-casting-expendable"].icons[1]={icon="__angelsindustries__/graphics/icons/gear.png",icon_size=32,}
     data.raw.recipe["ASE-iron-gear-casting-advanced"].icons[1]={icon="__angelsindustries__/graphics/icons/gear.png",icon_size=32,}
   end
+else
+  angelsmods.functions.add_unlock("angels-ironworks-3","ASE-mold-non-expendable-wash")
 end
 -- EXECUTE OVERRIDES
 angelsmods.functions.OV.execute()

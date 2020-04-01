@@ -25,7 +25,7 @@ data:extend({
 				icon_size=32,
 			},
 			{
-				icon = "__angelspetrochem__/graphics/icons/num_4.png",
+				icon = "__angelsrefining__/graphics/icons/num_4.png",
 				tint = {r = 0.8, g = 0.8, b = 0.8, a = 0.5},
 				scale = 0.32,
 				shift = {-12, -12},
@@ -50,7 +50,7 @@ data:extend({
 		},
 		order = "a[plastic]-a[liquid]-az",
 		icons = create_icon("liquid-plastic", {
-			icon = "__angelspetrochem__/graphics/icons/num_1.png",
+			icon = "__angelsrefining__/graphics/icons/num_1.png",
 			icon_size = 32,
 			tint = {r = 0.8, g = 0.8, b = 0.8, a = 0.5},
 			scale = 0.32,
@@ -78,7 +78,7 @@ data:extend({
 				icon = "__PCPRedux__/graphics/icons/solid-polyvinyl-chloride.png",
 			},
 			{
-				icon = "__angelspetrochem__/graphics/icons/num_2.png",
+				icon = "__angelsrefining__/graphics/icons/num_2.png",
 				tint = {r = 0.8, g = 0.8, b = 0.8, a = 0.5},
 				scale = 0.32,
 				shift = {-12, -12},
@@ -318,7 +318,7 @@ data:extend({
 				icon_size=32,
 			},
 			{
-				icon = "__angelspetrochem__/graphics/icons/num_3.png",
+				icon = "__angelsrefining__/graphics/icons/num_3.png",
 				tint = {r = 0.8, g = 0.8, b = 0.8, a = 0.5},
 				scale = 0.32,
 				shift = {-12, -12},
@@ -379,7 +379,7 @@ data:extend({
 	},
 	results={{type="fluid", name="liquid-resin", amount=40}},
 	icons = create_icon("liquid-resin", {
-		icon = "__angelspetrochem__/graphics/icons/num_4.png",
+		icon = "__angelsrefining__/graphics/icons/num_4.png",
 		icon_size = 32,
 		tint = {r = 0.8, g = 0.8, b = 0.8, a = 0.5},
 		scale = 0.32,

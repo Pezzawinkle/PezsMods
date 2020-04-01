@@ -123,7 +123,7 @@ data:extend({
       {type="fluid", name="liquid-rubber", amount=100},
     },
     icons=create_icon("liquid-rubber", {
-			icon = "__angelspetrochem__/graphics/icons/num_2.png",
+			icon = "__angelsrefining__/graphics/icons/num_2.png",
 			icon_size = 32,
 			tint = {r = 0.8, g = 0.8, b = 0.8, a = 0.5},
 			scale = 0.32,
@@ -226,7 +226,7 @@ data:extend({
     icons ={
       {icon="__PCPRedux__/graphics/icons/solid-rubber-additive.png",icon_size = 64},
       {
-        icon = "__angelspetrochem__/graphics/icons/num_1.png",
+        icon = "__angelsrefining__/graphics/icons/num_1.png",
         icon_size=32,
         tint = {r = 0.8, g = 0.8, b = 0.8, a = 0.5},
         scale = 0.32,
@@ -254,7 +254,7 @@ data:extend({
     icons ={
       {icon="__PCPRedux__/graphics/icons/solid-rubber-additive.png",icon_size = 64},
       {
-        icon = "__angelspetrochem__/graphics/icons/num_2.png",
+        icon = "__angelsrefining__/graphics/icons/num_2.png",
         tint = {r = 0.8, g = 0.8, b = 0.8, a = 0.5},
         icon_size=32,
         scale = 0.32,
