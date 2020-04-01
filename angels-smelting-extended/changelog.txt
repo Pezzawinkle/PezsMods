@@ -1,4 +1,10 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.18.4
+  Bugfixes:
+    - Fixed trigger lookup errors relating to using the angels industries setting
+    - Updated mold recipes, disabled ASE variant of molds if angels ones present
+    - Updated number icons to call the refining one, not the petrochem one (in prep of upcomning angels)
+---------------------------------------------------------------------------------------------------
 Version: 0.18.3
   Bugfixes:
     - Fixed trigger lookup errors relating to using the angels industries setting

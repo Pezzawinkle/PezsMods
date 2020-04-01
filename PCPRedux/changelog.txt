@@ -1,4 +1,10 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.18.3
+  Bugfixes:
+    - Updated number icons to call the refining one, not the petrochem one (in prep of upcomning angels)
+    - Fixed that the flask was not adding to the omni-pack if present
+    - Made sure flask is moved to the correct tab if angels components is active
+---------------------------------------------------------------------------------------------------
 Version: 0.18.2
   Features:
     - Updated icon scripts to use angels lib variant
