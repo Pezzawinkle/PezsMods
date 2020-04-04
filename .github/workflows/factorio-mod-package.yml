@@ -8,7 +8,7 @@ jobs:
       - name: lint
         uses: Roang-zero1/factorio-mod-luacheck@master
         with:
-          LUACHECKRC_URL: https://raw.githubusercontent.com/Nexela/Factorio-luacheckrc/blob/master/.luacheckrc
+          LUACHECKRC_URL: https://raw.githubusercontent.com/Nexela/Factorio-luacheckrc/master/.luacheckrc
   release-github:
     runs-on: ubuntu-latest
     needs: [lint]
