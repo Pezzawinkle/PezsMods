@@ -1,4 +1,16 @@
-metal_tab={--as much as i would love to do the commented out ones... id need to think on how to do the power/plastic systems
+coil_metals={--as much as i would love to do the commented out ones... id need to think on how to do the powder/plastic systems
+["tungsten"]={tint={r = 136/255, g = 98/255, b = 65/255},ing_1={type="fluid",name="gas-tungsten-hexafluoride",amount=10}},
+
+}
+if mods["bobplates"] then
+  coil_metals["brass"]={tint={r = 204/256, g = 153/256, b = 102/256}}
+  coil_metals["bronze"]={tint={r = 224/256, g = 155/256, b = 58/256}}
+  coil_metals["nitinol"]={tint={r = 106/256, g = 92/256, b = 153/256}}
+  coil_metals["invar"]={tint={r = 95/256, g = 125/256, b = 122/256}}
+  coil_metals["cobalt-steel"]={tint={r = 61/256, g = 107/256, b = 153/256}}
+  coil_metals["gunmetal"]={tint={r = 224/256, g = 103/256, b = 70/256}}
+end
+metal_tab={--as much as i would love to do the commented out ones... id need to think on how to do the powder/plastic systems
   "copper",
   --"stone",
   "steel",

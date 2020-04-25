@@ -1,10 +1,5 @@
 require("prototypes.data-tables")
---Ironworks recipes
--- IRONWORKS -- This needs rebalancing, and extension to cobalt-steel gears etc...
-
-
-
-
+-- IRONWORKS
 
 --SET-UP BASE CASTING RECIPES TO COPY LATER
 data:extend(
@@ -78,13 +73,13 @@ if mods["boblogistics"] and mods["bobplates"] then
     data:extend({m_pipe,u_pipe})
   end
 end
---SETTING UP MOLD ITEMS and RECIPES
+--SETTING UP CASTING MOLD ITEMS and RECIPES
 data:extend({
   --expendable mold recipe (want roasted)
   {
     type = "recipe",
-    name="ASE-mold-expendable",
-    category="smelting",
+    name="ASE-sand-die",
+    category="sintering",
     subgroup="angels-mold-casting",
     energy_required= 8,
     enabled="false",
@@ -100,15 +95,15 @@ data:extend({
       {type="item",name="powder-steel", amount=1}
     },
     results={
-      {type="item",name="mold-expendable",amount=8},
+      {type="item",name="ASE-sand-die",amount=8},
     },
-    order="ae",
+    order="aa",
   },
   --non-expendable mold recipe (initial)
   {
     type = "recipe",
-    name="ASE-mold-non-expendable",
-    category="smelting",
+    name="ASE-metal-die",
+    category="sintering",
     subgroup="angels-mold-casting",
     icons={
       {
@@ -130,24 +125,15 @@ data:extend({
       {type="item",name="powder-steel", amount=10}
     },
     results={
-      {type="item",name="mold-non-expendable",amount=8},
+      {type="item",name="ASE-metal-die",amount=8},
     },
-    order="ae",
+    order="ab",
   },
-  --spent-non-expendable mold
-  {
-    type = "item",
-    name = "ASE-spent-mold-non-expendable",
-    icon = "__angelssmelting__/graphics/icons/non-expendable-mold.png",
-    icon_size = 32,
-    subgroup = "angels-mold-casting",
-    order = "b",
-    stack_size = 200
-  },
+  
   --non-expendable mold washing
   {
     type = "recipe",
-    name="ASE-mold-non-expendable-wash",
+    name="ASE-metal-die-wash",
     category="crafting-with-fluid",
     subgroup="angels-mold-casting",
     energy_required= 8,
@@ -157,8 +143,10 @@ data:extend({
         icon = "__angelssmelting__/graphics/icons/non-expendable-mold.png",
         icon_size = 32,
       },
+      {icon = "__angelsrefining__/graphics/icons/slag.png",icon_size=32,scale=0.6},
       {
         icon = "__angelsrefining__/graphics/icons/num_2.png",
+        icon_size=32,
         tint = {r = 0.8, g = 0.8, b = 0.8, a = 0.5},
         scale = 0.32,
         shift = {-12, -12},
@@ -166,14 +154,14 @@ data:extend({
     },
     icon_size=32,
     ingredients={
-      {type="item", name="ASE-spent-mold-non-expendable",amount=3},
+      {type="item", name="ASE-spent-metal-die",amount=3},
       {type="fluid",name="liquid-nitric-acid", amount=20}
     },
     results={
-      {type="item",name="mold-non-expendable",amount=3},
+      {type="item",name="ASE-metal-die",amount=3},
       {type="fluid",name="water-red-waste", amount=20},
     },
-    order="ae",
+    order="ac",
   },
 })
 --SET-UP BASE CASTING RECIPES TO COPY LATER
@@ -185,6 +173,7 @@ data:extend(
     name = "angels-iron-gear-wheel-casting",
     category = "casting",
     subgroup = "angels-iron-casting",
+    localised_name={"recipe-name.reg-casting",{"lookup.iron"},"Gear Wheel"},
     energy_required = 2,
     enabled = "false",
     ingredients ={
@@ -201,6 +190,7 @@ data:extend(
     name = "ASE-iron-gear-casting-expendable",
     category = "casting",
     subgroup = "angels-iron-casting",
+    localised_name={"recipe-name.sand-casting",{"lookup.iron"},"Gear Wheel"},
     energy_required = 0.5,
     enabled = "false",
     icons={
@@ -216,7 +206,7 @@ data:extend(
     },
     ingredients ={
       {type="fluid", name="liquid-molten-iron", amount=80},
-      {type="item", name="mold-expendable",amount=2}
+      {type="item", name="ASE-sand-die",amount=2}
     },
     results=
     {
@@ -230,6 +220,7 @@ data:extend(
     name = "ASE-iron-gear-casting-advanced",
     category = "casting",
     subgroup = "angels-iron-casting",
+    localised_name={"recipe-name.die-casting",{"lookup.iron"},"Gear Wheel"},
     energy_required = 0.5,
     enabled = "false",
     icons={
@@ -245,12 +236,12 @@ data:extend(
     },
     ingredients ={
       {type="fluid", name="liquid-molten-iron", amount=80},
-      {type="item", name="mold-non-expendable",amount=3},
+      {type="item", name="ASE-metal-die",amount=3},
     },
     results=
     {
       {type="item", name="iron-gear-wheel", amount=15},
-      {type="item", name="ASE-spent-mold-non-expendable",amount=3},
+      {type="item", name="ASE-spent-metal-die",amount=3},
     },
     order = "ye",
   },
@@ -261,16 +252,18 @@ for n,metal in pairs(gears) do
     local m_gear1=table.deepcopy(data.raw.recipe["angels-iron-gear-wheel-casting"])
     m_gear1.name = "angels-"..metal.."-gear-wheel-casting"
     m_gear1.subgroup = "angels-"..metal.."-casting"
+    m_gear1.localised_name={"recipe-name.reg-casting",{"lookup."..metal},"Gear Wheel"}
     m_gear1.ingredients ={{type="fluid", name="liquid-molten-"..metal, amount=40},}
     m_gear1.results={{type="item", name=metal.."-gear-wheel", amount=9},}
     -- expendable casting
     local m_gear2=table.deepcopy(data.raw.recipe["ASE-iron-gear-casting-expendable"])
     m_gear2.name = "ASE-"..metal.."-gear-casting-expendable"
     m_gear2.subgroup = "angels-"..metal.."-casting"
+    m_gear2.localised_name={"recipe-name.sand-casting",{"lookup."..metal},"Gear Wheel"}
     m_gear2.icons[1]={icon="__bobplates__/graphics/icons/"..metal.."-gear-wheel.png",icon_size=32,}
     m_gear2.ingredients ={
       {type="fluid", name="liquid-molten-"..metal, amount=80},
-      {type="item", name="mold-expendable",amount=2}
+      {type="item", name="ASE-sand-die",amount=2}
     }
     m_gear2.results=
     {
@@ -281,15 +274,16 @@ for n,metal in pairs(gears) do
     local m_gear3=table.deepcopy(data.raw.recipe["ASE-iron-gear-casting-advanced"])
     m_gear3.name = "ASE-"..metal.."-gear-casting-advanced"
     m_gear3.subgroup = "angels-"..metal.."-casting"
+    m_gear3.localised_name={"recipe-name.die-casting",{"lookup."..metal},"Gear Wheel"}
     m_gear3.icons[1]={icon="__bobplates__/graphics/icons/"..metal.."-gear-wheel.png",icon_size=32,}
     m_gear3.ingredients ={
       {type="fluid", name="liquid-molten-"..metal, amount=80},
-      {type="item", name="mold-non-expendable",amount=3},
+      {type="item", name="ASE-metal-die",amount=3},
     }
     m_gear3.results=
     {
       {type="item", name=metal.."-gear-wheel", amount=15},
-      {type="item", name="ASE-spent-mold-non-expendable",amount=3},
+      {type="item", name="ASE-spent-metal-die",amount=3},
     }
     --tungsten-fixes
     if metal=="tungsten" then

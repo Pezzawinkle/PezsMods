@@ -1,4 +1,13 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.18.5
+  Features:
+    - Added Tier 2 coil making (finally)
+    - Added water to Tier 1 casting recipes
+    - Renamed and updated casting molds
+      - hopefully no conflicts with angels in names now
+      - updated icon for spent die to have a slag icon
+    - Cleaned up localisation methods
+---------------------------------------------------------------------------------------------------
 Version: 0.18.4
   Bugfixes:
     - Fixed trigger lookup errors relating to using the angels industries setting

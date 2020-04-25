@@ -205,7 +205,7 @@ if mods["bobplates"] then
           },
           {
             type = "unlock-recipe",
-            recipe = "ASE-mold-expendable"
+            recipe = "ASE-sand-die"
           },
           {
             type = "unlock-recipe",
@@ -255,11 +255,11 @@ if mods["bobplates"] then
           },
           {
             type = "unlock-recipe",
-            recipe = "ASE-mold-non-expendable"
+            recipe = "ASE-metal-die"
           },
           {
             type = "unlock-recipe",
-            recipe = "ASE-mold-non-expendable-wash"
+            recipe = "ASE-metal-die-wash"
           },
           {
             type = "unlock-recipe",
@@ -398,22 +398,22 @@ if mods["angelsindustries"] and angelsmods.industries.components then
       },
       effects =
       {
-        --[[{
+        {
           type = "unlock-recipe",
-          recipe = "ASE-mold-expendable"
-        },]]
+          recipe = "ASE-sand-die"
+        },
         {
           type = "unlock-recipe",
           recipe = "ASE-iron-gear-casting-expendable"
         },
-        --[[{
+        {
           type = "unlock-recipe",
-          recipe = "ASE-mold-non-expendable"
+          recipe = "ASE-metal-die"
         },
         {
           type = "unlock-recipe",
-          recipe = "ASE-mold-non-expendable-wash"
-        },]]
+          recipe = "ASE-metal-die-wash"
+        },
         {
           type = "unlock-recipe",
           recipe = "ASE-iron-gear-casting-advanced"
