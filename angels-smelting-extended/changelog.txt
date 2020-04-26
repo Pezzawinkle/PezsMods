@@ -1,7 +1,13 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.18.7
+  Bugfixes:
+    - Fixed missing tech unlock for tungsten T2 coil
+    - Fixed localisation missing for gunmetal
+    - Fixed icon replacement function to work with both icon styles
+---------------------------------------------------------------------------------------------------
 Version: 0.18.6
   Bugfixes:
-    - Fixed that the new tier 2 smelting recipes were not being generated correctly.
+    - Fixed that the new tier 2 smelting recipes were not being generated correctly
 ---------------------------------------------------------------------------------------------------
 Version: 0.18.5
   Features:

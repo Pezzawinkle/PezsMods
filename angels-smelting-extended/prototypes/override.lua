@@ -33,6 +33,8 @@ if mods["bobplates"] then
   angelsmods.functions.OV.add_unlock("angels-alloys-smelting-2","angels-roll-cobalt-steel-casting")
   angelsmods.functions.OV.add_unlock("angels-alloys-smelting-2","angels-roll-cobalt-steel-converting")
   angelsmods.functions.OV.add_unlock("angels-alloys-smelting-3","angels-roll-cobalt-steel-casting-fast")
+  --Tungsten
+  angelsmods.functions.OV.add_unlock("angels-tungsten-smelting-3","angels-roll-tungsten-casting-fast")
   -- category update SHOULD BE DONE ON RAW RECIPE FILE!!!
   --BRASS
   data.raw.recipe["angels-brass-smelting-1"].subgroup="angels-brass-casting"

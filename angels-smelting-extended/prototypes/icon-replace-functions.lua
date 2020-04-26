@@ -2,6 +2,7 @@ function ReplaceRollIcons(metal)
   local RollItem=data.raw.item["angels-roll-"..metal]
   local RollConvRecipe=data.raw.recipe["angels-roll-"..metal.."-converting"]
   local RollCreateRecipe=data.raw.recipe["angels-roll-"..metal.."-casting"]
+  local RollCreateRecipe2=data.raw.recipe["angels-roll-"..metal.."-casting-fast"]
   if metal=="brass" or metal=="bronze" or metal=="nitinol" then
     RollItem.icons={
       {
@@ -28,6 +29,19 @@ function ReplaceRollIcons(metal)
       },
       {
         icon = "__angelsrefining__/graphics/icons/num_1.png",
+        icon_size=32,
+        tint = {r = 0.8, g = 0.8, b = 0.8, a = 0.5},
+        scale = 0.32,
+        shift = {-12, -12},
+      },
+    }
+    RollCreateRecipe2.icons={
+      {
+        icon="__angels-smelting-extended__/graphics/icons/roll-"..metal..".png",
+        icon_size=32
+      },
+      {
+        icon = "__angelsrefining__/graphics/icons/num_2.png",
         icon_size=32,
         tint = {r = 0.8, g = 0.8, b = 0.8, a = 0.5},
         scale = 0.32,
@@ -61,6 +75,19 @@ function ReplaceRollIcons(metal)
       },
       {
         icon = "__angelsrefining__/graphics/icons/num_1.png",
+        icon_size=32,
+        tint = {r = 0.8, g = 0.8, b = 0.8, a = 0.5},
+        scale = 0.32,
+        shift = {-12, -12},
+      },
+    }
+    RollCreateRecipe2.icons={
+      {
+        icon="__angelssmelting__/graphics/icons/roll-"..metal..".png",
+        icon_size=32
+      },
+      {
+        icon = "__angelsrefining__/graphics/icons/num_2.png",
         icon_size=32,
         tint = {r = 0.8, g = 0.8, b = 0.8, a = 0.5},
         scale = 0.32,

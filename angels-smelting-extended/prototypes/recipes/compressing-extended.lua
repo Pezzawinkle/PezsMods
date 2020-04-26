@@ -27,6 +27,20 @@ for metal,properties in pairs(coil_metals) do
       energy_required = 2,
       enabled = "false",
       localised_name={"recipe-name.casting",{"lookup."..metal}},
+      icons={
+        {
+          icon = "__angels-smelting-extended__/graphics/icons/roll-blank.png",
+          tint = properties.tint,
+          icon_size=32
+        },
+        {
+          icon = "__angelsrefining__/graphics/icons/num_1.png",
+          --tint = {r = 0.8, g = 0.8, b = 0.8, a = 0.5},
+          scale = 0.32,
+          shift = {-12, -12},
+        },
+      },
+      icon_size=32,
       ingredients ={
         ing_1,
         {type="fluid",name="water",amount=10}
@@ -70,7 +84,7 @@ for metal,properties in pairs(coil_metals) do
     {
       type = "recipe",
       name = "angels-roll-"..metal.."-casting-fast",
-      category = "casting",
+      category = "strand-casting",
       subgroup = sgrp,
       energy_required = 2,
       enabled = "false",
