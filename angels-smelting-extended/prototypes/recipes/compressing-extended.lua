@@ -6,10 +6,12 @@ for metal,properties in pairs(coil_metals) do
     ing_1=properties.ing_1
     --adjust amount for tier 2 recipe
     ing_2=properties.ing_1
-    ing_2.amount=ing_2.amount*3.5 --140/40
   else
     ing_1={type="fluid", name="liquid-molten-"..metal, amount=40}
+    ing_2=ing_1
   end
+  ing_2.amount=ing_2.amount*3.5 --140/40
+  
   if metal=="gunmetal" then
     sgrp="angels-alloys-casting"
   else
