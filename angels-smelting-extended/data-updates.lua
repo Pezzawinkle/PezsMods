@@ -1,6 +1,6 @@
 require("prototypes.override")
+require("prototypes.icon-replace-functions")
 if settings.startup["ASE-angels-coil-icons"].value==true then
-  require("prototypes.icon-replace-functions")
   if mods["bobplates"] then
     ReplaceRollIcons("brass")
     ReplaceRollIcons("bronze")

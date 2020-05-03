@@ -5,15 +5,13 @@ require("prototypes.fluids")
 require("prototypes.recipes")
 require("prototypes.technology")
 require("prototypes.plas-wall")
-if data.raw.item["glass"] then
-  require("prototypes.bobs-glass-OV")
-end
-if data.raw.item["temperate-garden"] then -- check that bioprocessing is installed
-  require("prototypes.polylactic-acid")
-end
+--if glass
+require("prototypes.bobs-glass-OV")
+--if temperate-garden  -- check that bioprocessing is installed
+require("prototypes.polylactic-acid")
+--if rubber or solid-rubber
+require("prototypes.rubber-extended")
 if mods.bobplates or mods.apm_resource_pack and (data.raw.item["solid-rubber"] or data.raw.item["rubber"]) then
-          --(data.raw.fluid["liquid-rubber"] or data.raw.item["solid-rubber"] or data.raw.item["rubber"]) and data.raw.technology["rubber"].disabled==false then
-  require("prototypes.rubber-extended")
   angelsmods.functions.OV.add_unlock("rubber", "liquid-rubber-2")
   angelsmods.functions.OV.add_unlock("chlorine-processing-2", "butadiene-chlorination")
   angelsmods.functions.OV.add_unlock("chlorine-processing-2", "dichlorobutene-dechlorination")

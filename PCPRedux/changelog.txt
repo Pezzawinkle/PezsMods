@@ -1,4 +1,10 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.18.4
+  Features:
+    - Prepared for updates to angels industries
+  Bugfixes:
+    - Fixed that I was setting require behind mod checks potentially causing CRC fails in multiplayer
+---------------------------------------------------------------------------------------------------
 Version: 0.18.3
   Bugfixes:
     - Updated number icons to call the refining one, not the petrochem one (in prep of upcomning angels)
@@ -151,15 +157,15 @@ Version: 0.0.15
       may still need some balance, for now will not allow productivity.
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.14
-  Balance:
-    - modified a few things (not published)
+  Balancing:
+    - Modified a few things (not published)
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.13
   Changes:
     - Removed duplicates of cumene process and bisphenol-a, integrating angels items to the PCP recipes
   Features:
     - Added plastic wall
-      may still need balance, location is odd, i think other mods are moving the other walls.
+      - may still need balance, location is odd, i think other mods are moving the other walls.
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.12
   Bugfixes:

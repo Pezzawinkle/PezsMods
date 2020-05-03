@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.18.8
+  Bugfixes:
+    - Fixed that the new tier 2 smelting recipes did have spent coolant temperature set correctly
+    - Fixed that I was setting require behind mod checks potentially causing CRC fails in multiplayer
+---------------------------------------------------------------------------------------------------
 Version: 0.18.7
   Bugfixes:
     - Fixed missing tech unlock for tungsten T2 coil

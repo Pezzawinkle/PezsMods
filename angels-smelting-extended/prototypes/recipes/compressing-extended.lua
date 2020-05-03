@@ -96,7 +96,7 @@ for metal,properties in pairs(coil_metals) do
       results=
       {
         {type="item", name="angels-roll-"..metal, amount=4},
-        {type="fluid",name="liquid-coolant-used",amount=40}
+        {type="fluid",name="liquid-coolant-used",amount=40, temperature = 300}
       },
       icons={
         {
