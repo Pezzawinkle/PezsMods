@@ -1,5 +1,5 @@
 coil_metals={--as much as i would love to do the commented out ones... id need to think on how to do the powder/plastic systems
-["tungsten"]={tint={r = 136/255, g = 98/255, b = 65/255},ing_1={type="fluid",name="gas-tungsten-hexafluoride",amount=10}},
+["tungsten"]={tint={r = 136/255, g = 98/255, b = 65/255},ing_1={type="fluid",name="gas-tungsten-hexafluoride",amount=20}},
 
 }
 if mods["bobplates"] then

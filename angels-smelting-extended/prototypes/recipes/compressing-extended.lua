@@ -5,12 +5,12 @@ for metal,properties in pairs(coil_metals) do
   if properties.ing_1 then
     ing_1=properties.ing_1
     --adjust amount for tier 2 recipe
-    ing_2=properties.ing_1
+    ing_2=table.deepcopy(ing_1)
   else
-    ing_1={type="fluid", name="liquid-molten-"..metal, amount=40}
-    ing_2=ing_1
+    ing_1={type="fluid", name="liquid-molten-"..metal, amount=80}
+    ing_2=table.deepcopy(ing_1)
   end
-  ing_2.amount=ing_2.amount*3.5 --140/40
+  ing_2.amount=ing_2.amount*1.75 --140/80 7/4
   
   if metal=="gunmetal" then
     sgrp="angels-alloys-casting"
@@ -22,7 +22,7 @@ for metal,properties in pairs(coil_metals) do
     {
       type = "recipe",
       name = "angels-roll-"..metal.."-casting",
-      category = "casting",
+      category = "strand-casting",
       subgroup = sgrp,
       energy_required = 2,
       enabled = "false",
@@ -47,7 +47,7 @@ for metal,properties in pairs(coil_metals) do
       },
       results=
       {
-        {type="item", name="angels-roll-"..metal, amount=1},
+        {type="item", name="angels-roll-"..metal, amount=2},
       },
       order = "g",
     },
@@ -96,7 +96,7 @@ for metal,properties in pairs(coil_metals) do
       results=
       {
         {type="item", name="angels-roll-"..metal, amount=4},
-        {type="fluid",name="liquid-coolant-used",amount=40, temperature = 300}
+        {type="fluid",name="liquid-coolant-used",amount=40, temperature = 300,catalyst_amount=40}
       },
       icons={
         {
@@ -116,5 +116,5 @@ for metal,properties in pairs(coil_metals) do
     },
   })
   --add productivity to converting
-  angelsmods.functions.allow_productivity("angels-plate-"..metal)
+  angelsmods.functions.allow_productivity("angels-roll-"..metal.."-converting")
 end

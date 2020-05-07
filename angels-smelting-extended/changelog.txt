@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.18.9
+  Bugfixes:
+    - Fixed that I was not correctly manipulating table variables
+    - Moved T1 coils to strand casting (sorry if it breaks designs)
+    - Rabalanced the T1 coils to use the same quantities as angels coils
+    - Fixed that coil converting was not given productivity allowance
+---------------------------------------------------------------------------------------------------
 Version: 0.18.8
   Bugfixes:
     - Fixed that the new tier 2 smelting recipes did have spent coolant temperature set correctly
