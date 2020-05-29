@@ -24,7 +24,7 @@ for metal,properties in pairs(coil_metals) do
       name = "angels-roll-"..metal.."-casting",
       category = "strand-casting",
       subgroup = sgrp,
-      energy_required = 2,
+      energy_required = 4,
       enabled = "false",
       localised_name={"recipe-name.casting",{"lookup."..metal}},
       icons={
