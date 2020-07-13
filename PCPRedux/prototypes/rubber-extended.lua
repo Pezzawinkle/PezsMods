@@ -269,7 +269,7 @@ add chlorobutadiene polymerisation chlorobutadiene-->liquid rubber]]
       type = "recipe",
       name = "angels-roll-rubber-converting",
       category = "crafting",
-      subgroup = "petrochem-raw",
+      subgroup = "petrochem-solids",
       energy_required = 0.5,
       enabled = "false",
       ingredients ={
@@ -298,7 +298,7 @@ add chlorobutadiene polymerisation chlorobutadiene-->liquid rubber]]
       type = "recipe",
       name = "angels-roll-rubber-casting",
       category = "advanced-crafting",
-      subgroup = "petrochem-raw",
+      subgroup = "petrochem-solids",
       energy_required = 0.5,
       enabled = "false",
       ingredients ={
