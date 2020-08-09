@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.18.5
+  Bugfixes:
+    - Patched a compatibility issue with the wall
+    - Patched an issue with cumene and acetone missing
+---------------------------------------------------------------------------------------------------
 Version: 0.18.4
   Features:
     - Prepared for updates to angels industries

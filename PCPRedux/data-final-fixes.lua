@@ -1,8 +1,10 @@
 if mods["ShinyIcons"] and data.raw["item-subgroup"]["shinywalls1"] then
+if data.raw.recipe["plaswall"] then
   data.raw["item"]["plaswall"].group="combat"
   data.raw["item"]["plaswall"].subgroup="shinywalls1"
   data.raw["recipe"]["plaswall"].group="combat"
   data.raw["recipe"]["plaswall"].subgroup="shinywalls1"
+	end
 end
 if data.raw.item["rubber"] or data.raw.item["solid-rubber"] --[[or data.raw.item["apm_rubber"] ]]then
   --  require("prototypes.rubber-extended")
