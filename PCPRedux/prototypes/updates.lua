@@ -73,3 +73,19 @@ if data.raw.item["ap-bullet-projectile"] then
 		}
 	}
 end
+
+if angelsmods.functions.is_special_vanilla() then --revert removal settings
+local unhide_rec= {      
+  {name = "catalyst-steam-cracking-butane", tech = "oil-steam-cracking-1"},
+  {name = "gas-styrene-catalyst", tech = "angels-advanced-chemistry-2"},
+  {name = "gas-ethylbenzene-catalyst", tech ="angels-advanced-chemistry-2"},
+  {name = "cumene-process", tech = "angels-advanced-chemistry-4"},
+  {name = "gas-bisphenol-a", tech = "angels-advanced-chemistry-4"},
+  {name = "gas-phosgene", tech = "chlorine-processing-3"},
+}
+  for _,rec in pairs(unhide_rec) do
+    recs=data.raw.recipe[rec.name]
+    angelsmods.functions.OV.add_unlock(rec.tech, rec.name)
+  end
+  angelsmods.functions.OV.remove_unlock("resin-3", "PF-resin")
+end

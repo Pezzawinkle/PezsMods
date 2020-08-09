@@ -2,7 +2,7 @@
 Version: 0.18.5
   Bugfixes:
     - Patched a compatibility issue with the wall
-    - Patched an issue with cumene and acetone missing
+    - Patched an issue with recipes missing, and some that should be under special vanilla
 ---------------------------------------------------------------------------------------------------
 Version: 0.18.4
   Features:
