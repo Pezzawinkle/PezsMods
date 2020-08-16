@@ -27,12 +27,14 @@ angelsmods.functions.allow_productivity("liquid-plastic-abs")
 angelsmods.functions.allow_productivity("liquid-plastic-pvc")
 angelsmods.functions.allow_productivity("liquid-plastic-pmma")
 angelsmods.functions.allow_productivity("liquid-plastic-pc")
+--[[fallback require for glass
+require("prototypes.bobs-glass-OV")
 if data.raw.item["glass"] then
 	angelsmods.functions.allow_productivity("pc-glass")
 	angelsmods.functions.allow_productivity("pmma-glass")
 	angelsmods.functions.OV.add_unlock("plastic-pmma", "pmma-glass")
 	angelsmods.functions.OV.add_unlock("plastic-pc", "pc-glass")
-end
+end]]
 if data.raw.item["zinc-ore"] and data.raw.item["gold-ore"] then
 	data.raw.recipe["catalyst-metal-cyan"].ingredients ={
 		{type="item", name="catalyst-metal-carrier", amount=10},
@@ -75,7 +77,7 @@ if data.raw.item["ap-bullet-projectile"] then
 end
 
 if angelsmods.functions.is_special_vanilla() then --revert removal settings
-local unhide_rec= {      
+local unhide_rec= {
   {name = "catalyst-steam-cracking-butane", tech = "oil-steam-cracking-1"},
   {name = "liquid-styrene-catalyst", tech = "angels-advanced-chemistry-2"},
   {name = "liquid-ethylbenzene-catalyst", tech ="angels-advanced-chemistry-2"},
