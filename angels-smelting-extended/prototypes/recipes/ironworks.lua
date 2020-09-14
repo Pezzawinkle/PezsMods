@@ -62,7 +62,7 @@ if mods["boblogistics"] and mods["bobplates"] then
     u_pipe.name="angels-"..metal.."-pipe-to-ground-casting"
     u_pipe.subgroup="angels-"..metal.."-casting"
     u_pipe.ingredients ={{type="fluid", name="liquid-molten-"..metal, amount=ug_multi[metal]},}
-    u_pipe.results={{type="item", name=metal.."-pipe-to-ground", amount=1},}
+    u_pipe.results={{type="item", name=metal.."-pipe-to-ground", amount=2},}
     --tungsten-fixes
     if metal=="tungsten" then
       m_pipe.ingredients[1]={type="item", name="casting-powder-tungsten", amount=4}
@@ -129,7 +129,7 @@ data:extend({
     },
     order="ab",
   },
-  
+
   --non-expendable mold washing
   {
     type = "recipe",
@@ -177,11 +177,11 @@ data:extend(
     energy_required = 2,
     enabled = "false",
     ingredients ={
-      {type="fluid", name="liquid-molten-iron", amount=40},
+      {type="fluid", name="liquid-molten-iron", amount=80},
     },
     results=
     {
-      {type="item", name="iron-gear-wheel", amount=9},
+      {type="item", name="iron-gear-wheel", amount=8},
     },
     order = "yc",
   },
@@ -311,8 +311,9 @@ if mods["angelsindustries"] and (settings.startup["angels-enable-components"].va
     local m_inter1=table.deepcopy(data.raw.recipe["angels-iron-gear-wheel-casting"])
     m_inter1.name=item.."-casting"
     m_inter1.subgroup = "angels-"..i.metal.."-casting"
-    m_inter1.ingredients={{type="fluid", name="liquid-molten-"..i.metal, amount=60},}
-    m_inter1.results={{type="item", name=item, amount=4},}
+    m_inter1.localised_name = {"recipe-name.angels-advanced-regular", item_n}
+    m_inter1.ingredients={{type="fluid", name="liquid-molten-"..i.metal, amount=40*i.cost},}
+    m_inter1.results={{type="item", name=item, amount=4*i.amount},}
     m_inter1.order="z["..item.."]-c"
     -- expendable casting
     local m_inter2=table.deepcopy(data.raw.recipe["ASE-iron-gear-casting-expendable"])
@@ -320,8 +321,8 @@ if mods["angelsindustries"] and (settings.startup["angels-enable-components"].va
     m_inter2.subgroup = "angels-"..i.metal.."-casting"
     m_inter2.localised_name = {"recipe-name.angels-advanced-expendable", item_n}
     m_inter2.icons[1]={icon="__angelsindustries__/graphics/icons/"..ico_name..".png",icon_size=32,}
-    m_inter2.ingredients[1]={type="fluid", name="liquid-molten-"..i.metal, amount=80}
-    m_inter2.results[1]={type="item", name=item, amount=6}
+    m_inter2.ingredients[1]={type="fluid", name="liquid-molten-"..i.metal, amount=60*i.cost}
+    m_inter2.results[1]={type="item", name=item, amount=8*i.amount}
     m_inter2.order="z["..item.."]-d"
     --non-expendable casting
     local m_inter3=table.deepcopy(data.raw.recipe["ASE-iron-gear-casting-advanced"])
@@ -329,17 +330,17 @@ if mods["angelsindustries"] and (settings.startup["angels-enable-components"].va
     m_inter3.subgroup = "angels-"..i.metal.."-casting"
     m_inter3.localised_name = {"recipe-name.angels-advanced-crafting", item_n}
     m_inter3.icons[1]={icon="__angelsindustries__/graphics/icons/"..ico_name..".png",icon_size=32,}
-    m_inter3.ingredients[1]={type="fluid", name="liquid-molten-"..i.metal, amount=80}
-    m_inter3.results[1]={type="item", name=item, amount=8}
+    m_inter3.ingredients[1]={type="fluid", name="liquid-molten-"..i.metal, amount=80*i.cost}
+    m_inter3.results[1]={type="item", name=item, amount=12*i.amount}
     m_inter3.order="z["..item.."]-e"
 
     --tungsten-fixes
     if i.metal=="tungsten" then
-      m_inter1.ingredients[1]={type="item", name="casting-powder-tungsten", amount=6}
+      m_inter1.ingredients[1]={type="item", name="casting-powder-tungsten", amount=4*i.cost}
       m_inter1.category = "sintering"
-      m_inter2.ingredients[1]={type="item", name="casting-powder-tungsten", amount=8}
+      m_inter2.ingredients[1]={type="item", name="casting-powder-tungsten", amount=6*i.cost}
       m_inter2.category = "sintering"
-      m_inter3.ingredients[1]={type="item", name="casting-powder-tungsten", amount=8}
+      m_inter3.ingredients[1]={type="item", name="casting-powder-tungsten", amount=8*i.cost}
       m_inter3.category = "sintering"
     end
     data:extend({m_inter1,m_inter2,m_inter3})
