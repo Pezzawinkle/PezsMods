@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.0.1
+Date: 23.09.2020
+  Changes:
+    - Integrated a recipe ratio tweak by Recon419A for angels components
+---------------------------------------------------------------------------------------------------
 Version: 0.18.9
   Bugfixes:
     - Fixed that I was not correctly manipulating table variables
