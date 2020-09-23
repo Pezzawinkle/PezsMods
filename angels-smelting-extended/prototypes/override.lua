@@ -98,10 +98,9 @@ if mods["angelsindustries"] and angelsmods.industries.components then
         angelsmods.functions.OV.add_unlock(i.tech, "ASE-" .. item .. "-casting-advanced")
     end
     for n, item in pairs(shielding) do
-        angelsmods.functions.OV.add_unlock(
-            "angels-" .. item.metal .. "-smelting-2", "angels-shielding-coil-" .. item.metal .. "-casting")
-        angelsmods.functions.OV.add_unlock(
-            "angels-" .. item.metal .. "-smelting-3", "angels-shielding-coil-" .. item.metal .. "-casting-fast")
+        angelsmods.functions.OV.add_unlock("angels-" .. item.metal .. "-smelting-2", "angels-shielding-coil-" .. item.metal .. "-casting")
+        angelsmods.functions.OV.add_unlock("angels-" .. item.metal .. "-smelting-2", "angels-shielding-coil-" .. item.metal .. "-converting")
+        angelsmods.functions.OV.add_unlock("angels-" .. item.metal .. "-smelting-3", "angels-shielding-coil-" .. item.metal .. "-casting-fast")
     end
     --check for also bobs
     if mods["bobplates"] then --replace icon gear icons
