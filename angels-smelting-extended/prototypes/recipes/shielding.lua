@@ -1,4 +1,4 @@
-if mods["angelsindustries"] and angelsmods.industries.components then
+if mods["angelsindustries"] and (settings.startup["angels-enable-components"].value or settings.startup["angels-enable-tech"].value) then
     local function add_water_casting_recipe(metal)
         data:extend({
             type = "recipe",
@@ -70,6 +70,7 @@ if mods["angelsindustries"] and angelsmods.industries.components then
         enabled = false,
         ingredients = {
             { type = "fluid", name = "liquid-molten-copper", amount = 80 },
+            { type = "fluid", name = "water", amount = 40 }
         },
         results =
         {
