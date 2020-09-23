@@ -1,4 +1,12 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.0.1
+  Changes:
+    - Added in russian locale, provided by Airat9000
+---------------------------------------------------------------------------------------------------
+Version: 0.18.6
+  Changes:
+    - minor tweaks and bugfixes relating to angels fluid naming changes
+---------------------------------------------------------------------------------------------------
 Version: 0.18.5
   Bugfixes:
     - Patched a compatibility issue with the wall
