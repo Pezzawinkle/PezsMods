@@ -102,6 +102,10 @@ if mods["angelsindustries"] and angelsmods.industries.components then
         angelsmods.functions.OV.add_unlock("angels-" .. item.metal .. "-smelting-2", "angels-shielding-coil-" .. item.metal .. "-converting")
         angelsmods.functions.OV.add_unlock("angels-" .. item.metal .. "-smelting-3", "angels-shielding-coil-" .. item.metal .. "-casting-fast")
     end
+    --add girder stack recipes
+    angelsmods.functions.OV.add_unlock("angels-iron-smelting-2", "girder-stack-casting")
+    angelsmods.functions.OV.add_unlock("angels-iron-smelting-2", "angels-girder-stack-converting")
+    angelsmods.functions.OV.add_unlock("angels-iron-smelting-3", "girder-stack-casting-fast")
     --check for also bobs
     if mods["bobplates"] then --replace icon gear icons
         data.raw.recipe["ASE-iron-gear-casting-expendable"].icons[1] = { icon = "__angelsindustries__/graphics/icons/gear.png", icon_size = 32, }
