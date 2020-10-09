@@ -33,7 +33,7 @@ gears = {
     "tungsten"
 }
 a_inters = {
-    --["angels-gear"]={metal="iron"},--iron gear is now the angels-gear
+    ["angels-gear"]={metal="iron", icon = "gear", tech = "angels-components-mechanical-1", cost = 1, amount = 1},--iron gear is now the angels-gear
     ["angels-axle"] = { metal = "steel", icon = "axle", tech = "angels-components-mechanical-2", cost = 2, amount = 1 },
     ["angels-roller-chain"] = { metal = "aluminium", icon = "roller-chain", tech = "angels-components-mechanical-3", cost = 1, amount = 1 },
     ["angels-spring"] = { metal = "titanium", icon = "spring", tech = "angels-components-mechanical-4", cost = 1, amount = 1 },

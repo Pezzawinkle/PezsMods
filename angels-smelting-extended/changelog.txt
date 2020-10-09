@@ -1,4 +1,14 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.0.4
+Date: 02.10.2020
+  Changes:
+    - Gears have been standardized across vanilla, Bob's, and Angel's components overhaul
+---------------------------------------------------------------------------------------------------
+Version: 1.0.3
+Date: 02.10.2020
+  Changes:
+    - Shielding casting recipes have been converted to strand casting
+---------------------------------------------------------------------------------------------------
 Version: 1.0.2
 Date: 02.10.2020
   Changes:
