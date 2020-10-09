@@ -92,10 +92,15 @@ if mods["bobplates"] then
 end
 --find activation settings
 if mods["angelsindustries"] and angelsmods.industries.components then
-    for item, i in pairs(a_inters) do
-        angelsmods.functions.OV.add_unlock(i.tech, item .. "-casting")
-        angelsmods.functions.OV.add_unlock(i.tech, "ASE-" .. item .. "-casting-expendable")
-        angelsmods.functions.OV.add_unlock(i.tech, "ASE-" .. item .. "-casting-advanced")
+    for name, details in pairs(liquid_casting) do
+        angelsmods.functions.OV.add_unlock(details.tech, name .. "-casting")
+        angelsmods.functions.OV.add_unlock(details.tech, "ASE-" .. name .. "-casting-expendable")
+        angelsmods.functions.OV.add_unlock(details.tech, "ASE-" .. name .. "-casting-advanced")
+    end
+    for name, details in pairs(powder_casting) do
+        angelsmods.functions.OV.add_unlock(details.tech, name .. "-casting")
+        angelsmods.functions.OV.add_unlock(details.tech, "ASE-" .. name .. "-casting-expendable")
+        angelsmods.functions.OV.add_unlock(details.tech, "ASE-" .. name .. "-casting-advanced")
     end
     for n, item in pairs(shielding) do
         angelsmods.functions.OV.add_unlock("angels-" .. item.metal .. "-smelting-2", "angels-shielding-coil-" .. item.metal .. "-casting")

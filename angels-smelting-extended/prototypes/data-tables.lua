@@ -32,8 +32,9 @@ gears = {
     "cobalt-steel",
     "tungsten"
 }
-a_inters = {
-    --["angels-gear"]={metal="iron"},--iron gear is now the angels-gear
+liquid_casting = {
+    ["angels-gear"] = { metal = "iron", icon = "gear", tech = "angels-components-mechanical-1", cost = 1, amount = 1 },
+    ["angels-mechanical-parts"] = { metal = "iron", icon = "mechanical-parts", tech = "angels-components-mechanical-1", cost = 1, amount = 1},
     ["angels-axle"] = { metal = "steel", icon = "axle", tech = "angels-components-mechanical-2", cost = 2, amount = 1 },
     ["angels-roller-chain"] = { metal = "aluminium", icon = "roller-chain", tech = "angels-components-mechanical-3", cost = 1, amount = 1 },
     ["angels-spring"] = { metal = "titanium", icon = "spring", tech = "angels-components-mechanical-4", cost = 1, amount = 1 },
@@ -42,27 +43,29 @@ a_inters = {
     ["grate-steel"] = { metal = "steel", tech = "angels-components-construction-2", cost = 2, amount = 0.5 },
     ["grate-aluminium"] = { metal = "aluminium", tech = "angels-components-construction-3", cost = 2, amount = 1 },
     ["grate-titanium"] = { metal = "titanium", tech = "angels-components-construction-4", cost = 2, amount = 1 },
-    ["grate-tungsten"] = { metal = "tungsten", tech = "angels-components-construction-5", cost = 2, amount = 1 },
     ["angels-girder"] = { metal = "iron", icon = "girder", tech = "angels-components-construction-2", cost = 1, amount = 1 },
     ["angels-rivet"] = { metal = "steel", icon = "rivet", tech = "angels-components-construction-2", cost = 1, amount = 1 },
     ["angels-bracket"] = { metal = "aluminium", icon = "bracket", tech = "angels-components-construction-3", cost = 1, amount = 1 },
     ["angels-plating"] = { metal = "titanium", icon = "plating", tech = "angels-components-construction-4", cost = 1, amount = 1 },
-    ["angels-strut"] = { metal = "tungsten", icon = "strut", tech = "angels-components-construction-5", cost = 1, amount = 1 },
     ["body-1"] = { metal = "iron", tech = "angels-components-weapons-basic", cost = 2, amount = 1 },
     ["body-2"] = { metal = "steel", tech = "military", cost = 2, amount = 1 },
     ["body-3"] = { metal = "aluminium", tech = "military-2", cost = 2, amount = 1 },
     ["body-4"] = { metal = "titanium", tech = "angels-components-weapons-advanced", cost = 2, amount = 1 },
-    ["body-5"] = { metal = "tungsten", tech = "military-3", cost = 2, amount = 1 },
     ["angels-trigger"] = { metal = "iron", icon = "trigger", tech = "angels-components-weapons-basic", cost = 1, amount = 1 },
     ["angels-explosionchamber"] = { metal = "steel", icon = "explosion-chamber", tech = "military", cost = 1, amount = 1 },
     ["angels-fluidchamber"] = { metal = "aluminium", icon = "fluid-chamber", tech = "military-2", cost = 1, amount = 1 },
     ["angels-energycrystal"] = { metal = "titanium", icon = "energy-chamber", tech = "angels-components-weapons-advanced", cost = 1, amount = 1 },
+}
+powder_casting = {
+    ["grate-tungsten"] = { metal = "tungsten", tech = "angels-components-construction-5", cost = 2, amount = 1 },
+    ["angels-strut"] = { metal = "tungsten", icon = "strut", tech = "angels-components-construction-5", cost = 1, amount = 1 },
+    ["body-5"] = { metal = "tungsten", tech = "military-3", cost = 2, amount = 1 },
     --["angels-acceleratorcoil"]={metal="tungsten",icon="accelerator-coil",tech="military-3"}
 }
 shielding = {
     { metal = "copper", order = "i-z" },
     { metal = "tin", order = "h-z" },
-    { metal = "silver", order = "l-z"},
-    { metal = "gold", order = "k-z"},
-    { metal = "platinum", order = "j-z"}
+    { metal = "silver", order = "l-z" },
+    { metal = "gold", order = "k-z" },
+    { metal = "platinum", order = "j-z" }
 }
