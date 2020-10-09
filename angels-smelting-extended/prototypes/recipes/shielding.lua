@@ -50,7 +50,7 @@ if mods["angelsindustries"] and (settings.startup["angels-enable-components"].va
             {
                 type = "recipe",
                 name = "angels-shielding-coil-" .. metal .. "-converting",
-                category = "electronics",
+                category = mods["bobelectronics"] and "electronics" or "crafting",
                 subgroup = "angels-" .. metal .. "-casting",
                 energy_required = 1,
                 enabled = false,

@@ -4,7 +4,7 @@ data:extend(
     type = "technology",
     name = "angels-ironworks-1",
     icons ={
-      { icon="__angelssmelting__/graphics/technology/casting-machine-tech.png", icon_size = 128,},
+      { icon="__angels-smelting-extended__/graphics/icons/casting-machine-tech.png", icon_size = 128,},
       { icon="__base__/graphics/icons/iron-gear-wheel.png",icon_size=64,shift={25,-25}}
     },
     upgrade = true,
