@@ -106,10 +106,14 @@ if mods["angelsindustries"] and angelsmods.industries.components then
     angelsmods.functions.OV.add_unlock("angels-iron-smelting-2", "girder-stack-casting")
     angelsmods.functions.OV.add_unlock("angels-iron-smelting-2", "angels-girder-stack-converting")
     angelsmods.functions.OV.add_unlock("angels-iron-smelting-3", "girder-stack-casting-fast")
-    if mods["bobplates"] then --replace icon gear icons
+    --if mods["bobplates"] then --replace icon gear icons --activates for all conditions
         data.raw.recipe["ASE-iron-gear-casting-expendable"].icons[1]={icon="__angelsindustries__/graphics/icons/mechanical-parts.png",icon_size=32,}
         data.raw.recipe["ASE-iron-gear-casting-advanced"].icons[1]={icon="__angelsindustries__/graphics/icons/mechanical-parts.png",icon_size=32,}
-    end
+    --end
+    --disable the recipes which are not useful
+    angelsmods.functions.OV.disable_recipe("angels-iron-gear-wheel-casting")
+    angelsmods.functions.OV.disable_recipe("ASE-iron-gear-casting-expendable")
+    angelsmods.functions.OV.disable_recipe("ASE-iron-gear-casting-advanced")
 end
 -- EXECUTE OVERRIDES
 angelsmods.functions.OV.execute()
