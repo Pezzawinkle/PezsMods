@@ -106,7 +106,7 @@ if mods["angelsindustries"] and angelsmods.industries.components then
     angelsmods.functions.OV.add_unlock("angels-iron-smelting-2", "girder-stack-casting")
     angelsmods.functions.OV.add_unlock("angels-iron-smelting-2", "angels-girder-stack-converting")
     angelsmods.functions.OV.add_unlock("angels-iron-smelting-3", "girder-stack-casting-fast")
-    --if mods["bobplates"] then --replace icon gear icons --activates for all conditions
+    --if mods["bobplates"] then --replace iron gear icons --activates for all conditions
     
         data.raw.recipe["angels-iron-gear-wheel-casting"].localised_name={"recipe-name.angels-advanced-regular","Mechanical Parts"}
         data.raw.recipe["ASE-iron-gear-casting-expendable"].icons[1]={icon="__angelsindustries__/graphics/icons/mechanical-parts.png",icon_size=32,}
