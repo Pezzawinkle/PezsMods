@@ -114,7 +114,7 @@ if mods["angelsindustries"] and angelsmods.industries.components then
         data.raw.recipe["ASE-iron-gear-casting-advanced"].icons[1]={icon="__angelsindustries__/graphics/icons/mechanical-parts.png",icon_size=32,}
         data.raw.recipe["ASE-iron-gear-casting-advanced"].localised_name={"recipe-name.angels-advanced-crafting","Mechanical Parts"}
     --end
-    --disable the recipes which are not useful
+    --disable the recipes for iron gear wheels since they convert to recipes for mechanical parts
     angelsmods.functions.OV.disable_recipe("angels-iron-gear-wheel-casting")
     angelsmods.functions.OV.disable_recipe("ASE-iron-gear-casting-expendable")
     angelsmods.functions.OV.disable_recipe("ASE-iron-gear-casting-advanced")
