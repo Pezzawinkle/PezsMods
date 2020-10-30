@@ -306,12 +306,12 @@ if mods["angelsindustries"] and (settings.startup["angels-enable-components"].va
     else
       ico_name=item
     end
-    item_n = item:gsub("(%l)(%w*)", function(a,b) return string.upper(a)..b end)
+    --item_n = item:gsub("(%l)(%w*)", function(a,b) return string.upper(a)..b end)
     -- regular casting
     local m_inter1=table.deepcopy(data.raw.recipe["angels-iron-gear-wheel-casting"])
     m_inter1.name=item.."-casting"
     m_inter1.subgroup = "angels-"..i.metal.."-casting"
-    m_inter1.localised_name = {"recipe-name.angels-advanced-regular", item_n}
+    m_inter1.localised_name = {"recipe-name.angels-advanced-regular", {"item-name." ..item}}
     m_inter1.ingredients={{type="fluid", name="liquid-molten-"..i.metal, amount=40*i.cost},}
     m_inter1.results={{type="item", name=item, amount=4*i.amount},}
     m_inter1.order="z["..item.."]-c"
@@ -319,7 +319,7 @@ if mods["angelsindustries"] and (settings.startup["angels-enable-components"].va
     local m_inter2=table.deepcopy(data.raw.recipe["ASE-iron-gear-casting-expendable"])
     m_inter2.name="ASE-"..item.."-casting-expendable"
     m_inter2.subgroup = "angels-"..i.metal.."-casting"
-    m_inter2.localised_name = {"recipe-name.angels-advanced-expendable", item_n}
+    m_inter2.localised_name = {"recipe-name.angels-advanced-expendable", {"item-name."..item}}
     m_inter2.icons[1]={icon="__angelsindustries__/graphics/icons/"..ico_name..".png",icon_size=32,}
     m_inter2.ingredients[1]={type="fluid", name="liquid-molten-"..i.metal, amount=60*i.cost}
     m_inter2.results[1]={type="item", name=item, amount=8*i.amount}
@@ -328,7 +328,7 @@ if mods["angelsindustries"] and (settings.startup["angels-enable-components"].va
     local m_inter3=table.deepcopy(data.raw.recipe["ASE-iron-gear-casting-advanced"])
     m_inter3.name="ASE-"..item.."-casting-advanced"
     m_inter3.subgroup = "angels-"..i.metal.."-casting"
-    m_inter3.localised_name = {"recipe-name.angels-advanced-crafting", item_n}
+    m_inter3.localised_name = {"recipe-name.angels-advanced-crafting", {"item-name."..item}}
     m_inter3.icons[1]={icon="__angelsindustries__/graphics/icons/"..ico_name..".png",icon_size=32,}
     m_inter3.ingredients[1]={type="fluid", name="liquid-molten-"..i.metal, amount=80*i.cost}
     m_inter3.results[1]={type="item", name=item, amount=12*i.amount}
