@@ -3,6 +3,8 @@ Version: 1.0.4
 Date: 02.10.2020
   Changes:
     - Gears have been standardized across vanilla, Bob's, and Angel's components overhaul
+    - Migrated missing technology icon from an older version of angels (temp fix)
+    - Removed direct smelting to mechanical components
 ---------------------------------------------------------------------------------------------------
 Version: 1.0.3
 Date: 02.10.2020
