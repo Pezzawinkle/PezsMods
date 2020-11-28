@@ -53,7 +53,7 @@ if mods["bobplates"] then
         "angels-copper-smelting-1",
         "angels-tin-smelting-1",
         "angels-zinc-smelting-1",
-        "alloy-processing-1",
+        "alloy-processing",
       },
       effects =
       {

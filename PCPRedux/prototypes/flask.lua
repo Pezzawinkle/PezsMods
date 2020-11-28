@@ -43,7 +43,7 @@ not data.raw.item["flask"] then
     end
   end
   if data.raw.item["glass"] then
-    bobmods.lib.recipe.replace_ingredient("flask", "solid-sodium-hydroxide", "glass")
+    data.raw.recipe["flask"].ingredients = {{type = "item", name = "glass", amount = 1}}
   end
   if mods["angelsindustries"] and settings.startup["angels-enable-tech"].value then
     move_item("flask", "angels-pack-components", "ba")
