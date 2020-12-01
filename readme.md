@@ -53,5 +53,6 @@ These include:
     - Water-gas shift and reverse water gas shift reactions (CO<-->CO2 processes)
     - Phosgene synthesis
     - Bisphenol-A production
+- IX. Adds a glass sink. Flasks for science recipes (added to all past the first two)
 ### FOR OTHER MOD COMPATIBILITY
     - Please ask on discord, please note that any compatibility should already exist between that mod, and angels petrochem as a minimum.
