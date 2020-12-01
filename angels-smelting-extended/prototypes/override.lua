@@ -88,6 +88,16 @@ if mods["bobplates"] then
             angelsmods.functions.OV.add_unlock("angels-" .. metal .. "-smelting-1", "angels-" .. metal .. "-pipe-casting")
             angelsmods.functions.OV.add_unlock("angels-" .. metal .. "-smelting-1", "angels-" .. metal .. "-pipe-to-ground-casting")
         end
+        --patch non compliants
+        --plastic
+        angelsmods.functions.OV.add_unlock("plastics", "angels-plastic-pipe-casting")
+        angelsmods.functions.OV.add_unlock("plastics", "angels-plastic-pipe-to-ground-casting")
+        --stone
+        angelsmods.functions.OV.add_unlock("powder-metallurgy-1", "angels-stone-pipe-casting")
+        angelsmods.functions.OV.add_unlock("powder-metallurgy-1", "angels-stone-pipe-to-ground-casting")
+        --copper-tungsten
+        angelsmods.functions.OV.add_unlock("tungsten-alloy-processing", "angels-copper-tungsten-pipe-casting")
+        angelsmods.functions.OV.add_unlock("tungsten-alloy-processing", "angels-copper-tungsten-pipe-to-ground-casting")
     end
 end
 --find activation settings

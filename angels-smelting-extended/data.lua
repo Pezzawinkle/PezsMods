@@ -1,6 +1,9 @@
 require("prototypes.alloys-category-extended")
 
 angelsmods.trigger.smelting_products["steel"].powder = true -- enforce steel powder on for molds
+if mods["boblogistics"] and mods["bobplates"] then
+    angelsmods.trigger.smelting_products["copper"].powder = true -- enforce copper powder on for pipe-casting
+end
 
 require("prototypes.items.compression-extended")
 require("prototypes.items.ironworks")

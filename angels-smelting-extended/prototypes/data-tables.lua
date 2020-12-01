@@ -13,15 +13,15 @@ end
 metal_tab = {
     --as much as i would love to do the commented out ones... id need to think on how to do the powder/plastic systems
     "copper",
-    --"stone",
+    "stone",
     "steel",
-    --"plastic",
+    "plastic",
     --"ceramic",
     "titanium",
     "brass",
     "bronze",
     "tungsten",
-    --"copper-tungsten",
+    "copper-tungsten",
     "nitinol"
 }
 gears = {

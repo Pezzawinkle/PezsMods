@@ -51,12 +51,15 @@ if mods["boblogistics"] and mods["bobplates"] then
     local u_pipe=table.deepcopy(data.raw.recipe["angels-iron-pipe-to-ground-casting"])
     local ug_multi={
       ["copper"]=150,
+      ["stone"]=15,
       ["steel"]=170,
+      ["plastic"]=170,
       ["titanium"]=210,
       ["brass"]=190,
       ["bronze"]=170,
       ["nitinol"]=230,
-      ["tungsten"]=21
+      ["tungsten"]=21,
+      ["copper-tungsten"]=5 --should be 23
     }
     --iron is 15x for UG
     u_pipe.name="angels-"..metal.."-pipe-to-ground-casting"
@@ -70,6 +73,33 @@ if mods["boblogistics"] and mods["bobplates"] then
       u_pipe.ingredients[1]={type="item", name="casting-powder-tungsten", amount=ug_multi[metal]}
       u_pipe.category = "sintering"
     end
+    --plastic
+    if metal=="plastic" then
+      m_pipe.ingredients[1]={type="fluid", name="liquid-plastic", amount=4}
+      m_pipe.subgroup="angels-alloys-casting"
+      u_pipe.ingredients[1]={type="fluid", name="liquid-plastic", amount=ug_multi[metal]}
+      u_pipe.subgroup="angels-alloys-casting"
+    end
+    --stone
+    if metal=="stone" then
+      m_pipe.ingredients[1]={type="item", name="stone", amount=4*5}
+      m_pipe.category = "sintering"
+      u_pipe.ingredients[1]={type="item", name="stone", amount=ug_multi[metal]*5}
+      u_pipe.category = "sintering"
+    end
+    --copper-tungsten
+    if metal=="copper-tungsten" then
+      m_pipe.ingredients[1]={type="item", name="powdered-tungsten", amount=3}
+      m_pipe.ingredients[2]={type="item", name="powder-copper", amount=1}
+      m_pipe.category = "sintering"
+      m_pipe.subgroup="angels-alloys-casting"
+      u_pipe.ingredients[1]={type="item", name="powdered-tungsten", amount=ug_multi[metal]*3}
+      u_pipe.ingredients[2]={type="item", name="powder-copper", amount=ug_multi[metal]*2}
+      u_pipe.category = "sintering"
+      u_pipe.subgroup="angels-alloys-casting"
+    end
+    --ceramic
+    --==NO CERAMICS AT THIS POINT==--
     data:extend({m_pipe,u_pipe})
   end
 end
