@@ -1,4 +1,10 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.0.6
+Date: 01/12/2020
+  Changes:
+    - Fixed tech pre-req bug by angels smelting update
+    - Added stone, plastic and copper-tungsten pipe preliminary recipes
+---------------------------------------------------------------------------------------------------
 Version: 1.0.5
 Date: 24/11/2020
   Changes:
