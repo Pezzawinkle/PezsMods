@@ -67,7 +67,7 @@ if mods["boblogistics"] and mods["bobplates"] then
     u_pipe.name = "angels-"..metal.."-pipe-to-ground-casting"
     u_pipe.subgroup = "angels-"..metal.."-casting"
     u_pipe.ingredients = {{ type = "fluid", name = "liquid-molten-"..metal, amount = ug_multi[metal]},}
-    u_pipe.results = {{ type = "item",  = metal.."-pipe-to-ground", amount = 2},}
+    u_pipe.results = {{ type = "item", name = metal.."-pipe-to-ground", amount = 2},}
     --tungsten-fixes
     if metal == "tungsten" then
       m_pipe.ingredients[1] = { type = "item", name = "casting-powder-tungsten", amount = 4}
