@@ -3,7 +3,7 @@ Version: 1.0.7
 Date: 01/12/2020
   Changes:
     - Fixed graphical inconsistencies with angels smelting overlays
-    - Fixed that icons for recipes and items were swapped for molds
+    - Fixed that icons for recipes and items were swapped for molds (13)
 ---------------------------------------------------------------------------------------------------
 Version: 1.0.6
 Date: 01/12/2020
