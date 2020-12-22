@@ -1,4 +1,10 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.0.8
+Date: ??/??/202?
+  Changes:
+    - Updated graphics to reference angels new ones (and new internals) by Kirazy
+      - Thanks a heap for doing those, you are a champ.
+---------------------------------------------------------------------------------------------------
 Version: 1.0.7
 Date: 01/12/2020
   Changes:
