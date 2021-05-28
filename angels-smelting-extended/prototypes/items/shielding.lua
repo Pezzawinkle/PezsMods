@@ -1,5 +1,5 @@
 require("prototypes.data-tables")
-if mods["angelsindustries"] and angelsmods.triggers.components then
+if mods["angelsindustries"] and angelsmods.industries.components then
     for n, item in pairs(shielding) do
         data:extend({
             {
