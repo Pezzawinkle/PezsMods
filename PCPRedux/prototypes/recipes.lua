@@ -31,6 +31,7 @@ data:extend({
 				shift = {-12, -12},
 			}
 		},
+		crafting_machine_tint = angelsmods.functions.get_fluid_recipe_tint("liquid-plastic"),
 		icon_size = 32,
 		order = "a[plastic]-a[liquid]-da",
 	},
@@ -56,6 +57,7 @@ data:extend({
 			scale = 0.32,
 			shift = {-12, -12},
 		}),
+		crafting_machine_tint = angelsmods.functions.get_fluid_recipe_tint("liquid-plastic"),
 	},
 	{
 		type = "recipe",
@@ -84,6 +86,7 @@ data:extend({
 				shift = {-12, -12},
 			}
 		},
+		crafting_machine_tint = angelsmods.functions.get_fluid_recipe_tint("liquid-plastic"),
 		icon_size = 32,
 	},
 	{
@@ -102,6 +105,7 @@ data:extend({
 		},
 		icon = "__PCPRedux__/graphics/icons/solid-polymethyl-methacrylate.png",
 		icon_size = 32,
+		crafting_machine_tint = angelsmods.functions.get_fluid_recipe_tint("liquid-methyl-methacrylate"),
 		order = "i[pmma-synthesis]",
 	},
 	{
@@ -120,6 +124,7 @@ data:extend({
 			{type="item", name="solid-pc", amount=1}
 		},
 		icon = "__PCPRedux__/graphics/icons/solid-polycarbonate.png",
+		crafting_machine_tint = angelsmods.functions.get_fluid_recipe_tint("liquid-plastic"),
 		icon_size = 32,
 		order = "j[pc-synthesis]",
 	},
@@ -141,6 +146,7 @@ data:extend({
 			{type="item", name="catalyst-metal-carrier", amount=1}
 		},
 		icons = angelsmods.functions.create_liquid_recipe_icon({{icon="__PCPRedux__/graphics/icons/raw/acrylonitrile.png",icon_size=72}}, "cnh"),
+		crafting_machine_tint = angelsmods.functions.get_fluid_recipe_tint("liquid-acrylonitrile"),
 		order = "j[acryllonitrile-synthesis]",
 	},
 	{
@@ -162,6 +168,7 @@ data:extend({
 			{type="item", name="catalyst-metal-carrier", amount=2}
 		},
 		icons =angelsmods.functions.create_gas_recipe_icon({{icon="__PCPRedux__/graphics/icons/raw/vinyl-chloride.png",icon_size=72}}, "clh"),
+		crafting_machine_tint = angelsmods.functions.get_fluid_recipe_tint("gas-vinyl-chloride"),
 		order = "j",
 	},
 	{
@@ -180,6 +187,7 @@ data:extend({
 			{type="fluid", name="liquid-acetone-cyanohydrin", amount=100}
 		},
 		icons =angelsmods.functions.create_liquid_recipe_icon({{icon="__PCPRedux__/graphics/icons/raw/acetone-cyanohydrin.png",icon_size=72}}, "con"),
+		crafting_machine_tint = angelsmods.functions.get_fluid_recipe_tint("liquid-acetone-cyanohydrin"),
 		order = "m[acetone-cyanohydrin-synthesis]",
 	},
 	{
@@ -200,6 +208,7 @@ data:extend({
 			{type="item", name="solid-ammonium-sulphate", amount=5}
 		},
 		icons =angelsmods.functions.create_liquid_recipe_icon({{icon="__PCPRedux__/graphics/icons/raw/methyl-methacrylate.png",icon_size=72}}, "cho"),
+		crafting_machine_tint = angelsmods.functions.get_fluid_recipe_tint("liquid-methyl-methacrylate"),
 		order = "f",
 	},
 	{
@@ -218,6 +227,7 @@ data:extend({
 			{type="fluid", name="gas-phosgene", amount=100}
 		},
 		icons =angelsmods.functions.create_gas_recipe_icon({{ "__angelspetrochem__/graphics/icons/molecules/phosgene.png", 72 }}, "clo"),
+		crafting_machine_tint = angelsmods.functions.get_fluid_recipe_tint("gas-phosgene"),
 		order = "k[phosgene-synthesis]",
 	},
 	{
@@ -240,6 +250,7 @@ data:extend({
 		--[[icon = "__PCPRedux__/graphics/icons/recipe-nitrous-oxide-1.png",
 		icon_size = 32,]]
 		icons=angelsmods.functions.create_gas_recipe_icon({{icon="__PCPRedux__/graphics/icons/raw/nitrous-oxide.png",icon_size=72},"solid-ammonium-sulphate"}, "nno"),
+		crafting_machine_tint = angelsmods.functions.get_fluid_recipe_tint("gas-nitrous-oxide"),
 		order = "k[nitrous-oxide-synthesis-1]",
 	},
 	{
@@ -258,6 +269,7 @@ data:extend({
 			{type="fluid", name="gas-nitrous-oxide", amount=100}
 		},
 		icons =angelsmods.functions.create_gas_recipe_icon({{icon="__PCPRedux__/graphics/icons/raw/nitrous-oxide.png",icon_size=72}}, "nno"),
+		crafting_machine_tint = angelsmods.functions.get_fluid_recipe_tint("gas-nitrous-oxide"),
 		order = "l[nitrous-oxide-synthesis-2]",
 	},
 	{
@@ -275,6 +287,7 @@ data:extend({
 		{
 			{type="item", name="solid-sodium-nitrate", amount=10}
 		},
+		crafting_machine_tint = angelsmods.functions.get_fluid_recipe_tint("solid-sodium-nitrate"--[[ or "liquid-nitric-acid"]]),
 		order = "i[sodium-nitrate-synthesis]",
 	},
 	{
@@ -295,6 +308,7 @@ data:extend({
 			{type="item", name="catalyst-metal-carrier", amount=1}
 		},
 		icons =angelsmods.functions.create_gas_recipe_icon({{icon="__PCPRedux__/graphics/icons/raw/hydrogen-cyanide.png",icon_size=72}}, "cnh"),
+		crafting_machine_tint = angelsmods.functions.get_fluid_recipe_tint("gas-hydrogen-cyanide"),
 		order = "l"
 	},
 	{
@@ -324,6 +338,7 @@ data:extend({
 				shift = {-12, -12},
 			}
 		},
+		crafting_machine_tint = angelsmods.functions.get_fluid_recipe_tint("liquid-plastic"),
 		icon_size = 32,
 	},
 	{
@@ -364,6 +379,7 @@ data:extend({
 			{type="item", name="catalyst-metal-carrier", amount=1},
 		},
 		icons =angelsmods.functions.create_liquid_recipe_icon({"liquid-fuel-oil"}, {{r = 233/255, g = 254/255, b = 127/255},{r = 233/255, g = 254/255, b = 127/255},{ r = 255, g = 105, b = 180 }}),
+		crafting_machine_tint = angelsmods.functions.get_fluid_recipe_tint("liquid-fuel-oil"),
 		order = "f"
 	},
 	{
@@ -386,5 +402,6 @@ data:extend({
 		shift = {-12, -12},
 	}),
     order = "b[resin]-a[liquid]-d",
+		crafting_machine_tint = angelsmods.functions.get_fluid_recipe_tint("liquid-resin"),
 	},
 })
