@@ -129,5 +129,12 @@ if mods["angelsindustries"] and angelsmods.industries.components then
     angelsmods.functions.OV.disable_recipe("ASE-iron-gear-casting-expendable")
     angelsmods.functions.OV.disable_recipe("ASE-iron-gear-casting-advanced")
 end
+if data.raw.item["insulated-cable"] then
+    angelsmods.functions.OV.add_unlock("rubber", "angels-wire-coil-insulated-casting")
+    angelsmods.functions.OV.add_unlock("rubber", "angels-wire-coil-insulated-converting")
+    angelsmods.functions.OV.add_unlock("rubber", "angels-wire-coil-insulated-casting-fast")
+    angelsmods.functions.allow_productivity("angels-wire-coil-insulated-converting")
+    angelsmods.functions.allow_bio_productivity("angels-wire-coil-insulated-converting")--only because the competing chain has access :(
+end
 -- EXECUTE OVERRIDES
 angelsmods.functions.OV.execute()

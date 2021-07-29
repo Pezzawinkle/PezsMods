@@ -59,4 +59,16 @@ if mods["bobplates"] then
       stack_size = 200
     },
   })
+  if data.raw.item["insulated-cable"] then
+    data:extend({
+      {
+        type = "item",
+        name = "angels-wire-coil-insulated",
+        icons={{icon = "__angels-smelting-extended__/graphics/icons/wire-coil-insulated.png", icon_size = 64, icon_mipmaps = 4}},
+        subgroup = "angels-alloys-casting",
+        order = "ja",
+        stack_size = 200
+      },
+    })
+  end
 end

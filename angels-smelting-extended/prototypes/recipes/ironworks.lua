@@ -122,6 +122,12 @@ data:extend({
         icon_mipmaps = 1
       },
       {
+        icon = "__angelssmelting__/graphics/icons/expendable-mold.png",
+        icon_size = 32,
+        icon_mipmaps = 1,
+        tint = {.91, .89, .79, .5}
+      },
+      {
         icon = "__angelsrefining__/graphics/icons/solid-sand.png",
         icon_size = 32,
         scale = 0.4375,
@@ -144,26 +150,26 @@ data:extend({
     name = "ASE-metal-die",
     category = "sintering",
     subgroup = "angels-mold-casting",
-    icons = {
+    icons = angelsmods.functions.add_number_icon_layer(
       {
-        icon = "__angelssmelting__/graphics/icons/non-expendable-mold.png",
-        icon_size = 32,
-        icon_mipmaps = 1
-      },
-      {
-        icon = "__angelssmelting__/graphics/icons/powder-steel.png",
-        icon_size = 32,
-        scale = 0.4375,
-        shift = {10, -10},
-      },     
-      {
-        icon = "__angelsrefining__/graphics/icons/num_1.png",
-        tint = { r = 0.8, g = 0.8, b = 0.8, a = 0.5},
-        scale = 0.32,
-        shift = {-12, -12}
-      },
-    },
-    icon_size = 32,
+        {
+          icon = "__angelssmelting__/graphics/icons/non-expendable-mold.png",
+          icon_size = 32,
+          icon_mipmaps = 1
+        },
+        {
+          icon = "__angelssmelting__/graphics/icons/non-expendable-mold.png",
+          icon_size = 32,
+          icon_mipmaps = 1,
+          tint = {.91, .89, .79, .5}
+        },
+        {
+          icon = "__angelssmelting__/graphics/icons/powder-steel.png",
+          icon_size = 64,
+          scale = 0.4375*0.5,
+          shift = {10, -10},
+        },
+      }, 1, angelsmods.smelting.number_tint),
     energy_required = 8,
     enabled = "false",
     ingredients = {
@@ -184,25 +190,9 @@ data:extend({
     subgroup = "angels-mold-casting",
     energy_required = 8,
     enabled ="false",
-    icons = {
-      {
-        icon = "__angelssmelting__/graphics/icons/non-expendable-mold.png",
-        icon_size = 32,
-      },
-      {
-        icon = "__angelsrefining__/graphics/icons/slag.png",
-        icon_size = 32,
-        scale = 0.6
-      },
-      {
-        icon = "__angelsrefining__/graphics/icons/num_2.png",
-        icon_size = 32,
-        tint = { r = 0.8, g = 0.8, b = 0.8, a = 0.5},
-        scale = 0.32,
-        shift = { -12, -12}
-      },
-    },
-    icon_size = 32,
+    icons = angelsmods.functions.add_number_icon_layer(
+      angelsmods.functions.get_object_icons("ASE-spent-metal-die"),
+      2, angelsmods.smelting.number_tint),
     ingredients = {
       { type = "item", name = "ASE-spent-metal-die", amount = 3},
       { type = "fluid", name = "liquid-nitric-acid", amount = 20}
@@ -249,7 +239,14 @@ data:extend(
         icon = "__angelssmelting__/graphics/icons/expendable-mold.png",
         icon_size = 32,
         scale = 0.4375,
+        shift = {-10, -10}
+      },
+      { 
+        icon = "__angelssmelting__/graphics/icons/expendable-mold.png",
+        icon_size = 32,
+        scale = 0.4375,
         shift = {-10, -10},
+        tint = {.91, .89, .79, .5}
       },
     },
     ingredients = {
@@ -278,6 +275,13 @@ data:extend(
         icon_size = 32,
         scale = 0.4375,
         shift = {-10, -10},
+      },
+      {
+        icon = "__angelssmelting__/graphics/icons/non-expendable-mold.png",
+        icon_size = 32,
+        scale = 0.4375,
+        shift = {-10, -10},
+        tint = {.91, .89, .79, .5}
       },
     },
     ingredients = {

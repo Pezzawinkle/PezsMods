@@ -1,4 +1,6 @@
-function ReplaceRollIcons(metal)
+if not ASE then ASE={} end
+if not ASE.functions then ASE.functions={} end
+function ASE.functions.ReplaceRollIcons(metal)
   local RollItem=data.raw.item["angels-roll-"..metal]
   local RollConvRecipe=data.raw.recipe["angels-roll-"..metal.."-converting"]
   local RollCreateRecipe=data.raw.recipe["angels-roll-"..metal.."-casting"]
@@ -25,34 +27,19 @@ function ReplaceRollIcons(metal)
         shift = {-10, -10}
       },
     }
-    RollCreateRecipe.icons={
+    RollCreateRecipe.icons = angelsmods.functions.add_number_icon_layer({
       {
         icon="__angels-smelting-extended__/graphics/icons/roll-"..metal..".png",
         icon_size=64,
         icon_mipmaps=4
-      },
-      {
-        icon = "__angelsrefining__/graphics/icons/num_1.png",
-        icon_size=32,
-        tint = {r = 0.8, g = 0.8, b = 0.8, a = 0.5},
-        scale = 0.32,
-        shift = {-12, -12}
-      },
-    }
-    RollCreateRecipe2.icons={
+      },}, 1 , angelsmods.smelting.number_tint)
+
+    RollCreateRecipe2.icons = angelsmods.functions.add_number_icon_layer({
       {
         icon="__angels-smelting-extended__/graphics/icons/roll-"..metal..".png",
         icon_size=64,
         icon_mipmaps=4
-      },
-      {
-        icon = "__angelsrefining__/graphics/icons/num_2.png",
-        icon_size=32,
-        tint = {r = 0.8, g = 0.8, b = 0.8, a = 0.5},
-        scale = 0.32,
-        shift = {-12, -12}
-      },
-    }
+      },}, 2 , angelsmods.smelting.number_tint)
   --elseif metal=="invar" or metal=="gunmetal" or metal=="cobalt-steel" then
     --don't change
   else -- all others are found in angels icons
@@ -75,33 +62,17 @@ function ReplaceRollIcons(metal)
         shift = {-10, -10}
       },
     }
-    RollCreateRecipe.icons={
+    RollCreateRecipe.icons = angelsmods.functions.add_number_icon_layer({
       {
         icon="__angelssmelting__/graphics/icons/roll-"..metal..".png",
         icon_size=64,
         icon_mipmaps=4
-      },
-      {
-        icon = "__angelsrefining__/graphics/icons/num_1.png",
-        icon_size=32,
-        tint = {r = 0.8, g = 0.8, b = 0.8, a = 0.5},
-        scale = 0.32,
-        shift = {-12, -12}
-      },
-    }
-    RollCreateRecipe2.icons={
+      },}, 1 , angelsmods.smelting.number_tint)
+    RollCreateRecipe2.icons = angelsmods.functions.add_number_icon_layer({
       {
         icon="__angelssmelting__/graphics/icons/roll-"..metal..".png",
         icon_size=64,
         icon_mipmaps=4
-      },
-      {
-        icon = "__angelsrefining__/graphics/icons/num_2.png",
-        icon_size=32,
-        tint = {r = 0.8, g = 0.8, b = 0.8, a = 0.5},
-        scale = 0.32,
-        shift = {-12, -12}
-      },
-    }
+      },}, 2 , angelsmods.smelting.number_tint)
   end
 end

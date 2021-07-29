@@ -1,11 +1,10 @@
-if mods["angelsindustries"] and angelsmods.industries.components then
     local function add_water_casting_recipe(metal)
         data:extend({
             {
                 type = "recipe",
                 name = "angels-shielding-coil-" .. metal .. "-casting",
                 category = "strand-casting",
-                subgroup = "angels-" .. metal .. "-casting",
+                subgroup = "angels-" .. metal .. "-casting" or "angels-alloys-casting",
                 energy_required = 4,
                 enabled = false,
                 ingredients = {
@@ -17,6 +16,7 @@ if mods["angelsindustries"] and angelsmods.industries.components then
                 {
                     { type = "item", name = "angels-shielding-coil-" .. metal, amount = 4 },
                 },
+                icons = angelsmods.functions.add_number_icon_layer(angelsmods.functions.get_object_icons("angels-shielding-coil-" .. metal), 1 , angelsmods.smelting.number_tint),
             }
         })
     end
@@ -27,7 +27,7 @@ if mods["angelsindustries"] and angelsmods.industries.components then
                 type = "recipe",
                 name = "angels-shielding-coil-" .. metal .. "-casting-fast",
                 category = "strand-casting",
-                subgroup = "angels-" .. metal .. "-casting",
+                subgroup = "angels-" .. metal .. "-casting" or "angels-alloys-casting",
                 energy_required = 2,
                 enabled = false,
                 ingredients = {
@@ -41,6 +41,7 @@ if mods["angelsindustries"] and angelsmods.industries.components then
                     { type = "fluid", name = "liquid-coolant-used", amount = 40, temperature = 300 }
                 },
                 main_product = "angels-shielding-coil-" .. metal,
+                icons = angelsmods.functions.add_number_icon_layer(angelsmods.functions.get_object_icons("angels-shielding-coil-" .. metal), 2 , angelsmods.smelting.number_tint),
             }
         })
     end
@@ -51,7 +52,7 @@ if mods["angelsindustries"] and angelsmods.industries.components then
                 type = "recipe",
                 name = "angels-shielding-coil-" .. metal .. "-converting",
                 category = mods["bobelectronics"] and "electronics" or "crafting",
-                subgroup = "angels-" .. metal .. "-casting",
+                subgroup = "angels-" .. metal .. "-casting" or "angels-alloys-casting",
                 energy_required = 1,
                 enabled = false,
                 ingredients = {
@@ -62,9 +63,14 @@ if mods["angelsindustries"] and angelsmods.industries.components then
                     { type = "item", name = "cable-shielding-" .. tier, amount = 16 },
                 },
                 main_product = "cable-shielding-" .. tier,
+                icons = angelsmods.functions.add_icon_layer(
+                    angelsmods.functions.get_object_icons("cable-shielding-" .. tier),
+                    angelsmods.functions.get_object_icons("angels-shielding-coil-" .. metal),
+                    {10, -10}, 0.4375*0.5),
             }
         })
     end
+if mods["angelsindustries"] and angelsmods.industries.components then
 
     -- Add regular recipe for copper shielding individually because it only takes one metal
     data:extend({
@@ -83,6 +89,7 @@ if mods["angelsindustries"] and angelsmods.industries.components then
             {
                 { type = "item", name = "angels-shielding-coil-copper", amount = 4 },
             },
+            icons = angelsmods.functions.add_number_icon_layer(angelsmods.functions.get_object_icons("angels-shielding-coil-copper"), 1 , angelsmods.smelting.number_tint),
         }
     })
 
@@ -105,6 +112,7 @@ if mods["angelsindustries"] and angelsmods.industries.components then
                 { type = "fluid", name = "liquid-coolant-used", amount = 40, temperature = 300 }
             },
             main_product = "angels-shielding-coil-copper",
+            icons = angelsmods.functions.add_number_icon_layer(angelsmods.functions.get_object_icons("angels-shielding-coil-copper"), 2 , angelsmods.smelting.number_tint),
         }
     })
 
@@ -126,4 +134,69 @@ if mods["angelsindustries"] and angelsmods.industries.components then
     add_cutting_recipe("silver", 3)
     add_cutting_recipe("gold", 4)
     add_cutting_recipe("platinum", 5)
+end
+if data.raw.item["insulated-cable"] then
+    local count = data.raw.recipe["insulated-cable"].ingredients[1].amount * 8
+    --[[this is based on the rubber rework
+    insulated-cable amount = wood_per_rubber * 2
+    tinned-copper-cable amount = wood_per_rubber * 2
+    energy_required = wood_per_rubber / 2 ]]
+    data:extend({
+        {
+            type = "recipe",
+            name = "angels-wire-coil-insulated-casting",
+            category = "strand-casting",
+            subgroup = "angels-alloys-casting",
+            energy_required = 4,
+            enabled = false,
+            ingredients = {
+                { type = "fluid", name = "liquid-rubber", amount = 10 },
+                { type = "fluid", name = "liquid-molten-tin", amount = count * 8 },
+                { type = "fluid", name = "liquid-molten-copper", amount = count * 8 },
+                { type = "fluid", name = "water", amount = 40 }
+            },
+            results =
+            {
+                { type = "item", name = "angels-wire-coil-insulated", amount = count },
+            },
+            icons = angelsmods.functions.add_number_icon_layer(angelsmods.functions.get_object_icons("angels-wire-coil-insulated"), 1 , angelsmods.smelting.number_tint),
+        },
+        {
+            type = "recipe",
+            name = "angels-wire-coil-insulated-casting-fast",
+            category = "strand-casting",
+            subgroup = "angels-alloys-casting",
+            energy_required = 2,
+            enabled = false,
+            ingredients = {
+                { type = "fluid", name = "liquid-rubber", amount = 18 },
+                { type = "fluid", name = "liquid-molten-tin", amount = count*14 },
+                { type = "fluid", name = "liquid-molten-copper", amount = count*14 },
+                { type = "fluid", name = "liquid-coolant", amount = 40 }
+            },
+            results =
+            {
+                { type = "item", name = "angels-wire-coil-insulated", amount = count*2 },
+                { type = "fluid", name = "liquid-coolant-used", amount = 40, temperature = 300 }
+            },
+            main_product = "angels-wire-coil-insulated",
+            icons = angelsmods.functions.add_number_icon_layer(angelsmods.functions.get_object_icons("angels-wire-coil-insulated"), 2 , angelsmods.smelting.number_tint),
+        },            {
+            type = "recipe",
+            name = "angels-wire-coil-insulated-converting",
+            category = mods["bobelectronics"] and "electronics" or "crafting",
+            subgroup = "angels-alloys-casting",
+            energy_required = 1,
+            enabled = false,
+            ingredients = {
+                { type = "item", name = "angels-wire-coil-insulated", amount = 4 }
+            },
+            results =
+            {
+                { type = "item", name = "insulated-cable", amount = 20 }, --should be 16, but with ag modules in the others, this is "worse"
+            },
+            main_product = "insulated-cable",
+            icons = angelsmods.functions.add_icon_layer(angelsmods.functions.get_object_icons("insulated-cable"), angelsmods.functions.get_object_icons("angels-wire-coil-insulated"),{-10, -10}, 0.4375*0.5),
+        }
+    })
 end
