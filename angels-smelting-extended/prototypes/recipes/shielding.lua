@@ -136,7 +136,13 @@ if mods["angelsindustries"] and angelsmods.industries.components then
     add_cutting_recipe("platinum", 5)
 end
 if data.raw.item["insulated-cable"] then
-    local count = data.raw.recipe["insulated-cable"].ingredients[1].amount * 8
+    local count = 16
+    local ings=data.raw.recipe["insulated-cable"].ingredients
+    if ings[1] and ings[1].amount then
+        count = ings[1].amount * 8
+    elseif ings[1] and ings[1][2] then
+        count = ings[1][2] * 8
+    end
     --[[this is based on the rubber rework
     insulated-cable amount = wood_per_rubber * 2
     tinned-copper-cable amount = wood_per_rubber * 2
