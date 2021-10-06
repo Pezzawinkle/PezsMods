@@ -155,36 +155,39 @@ local function formula_extraction_2(chemical_formula)
 	end
 	return multi
 end
-function angelsmods.functions.fluid_color(chemical_formula)--parse as label number, label number (example H2,O3,C5, not C5O3H2)
-	local color = {}
-  local rgb = formula_extraction_1(chemical_formula)
-	local multi = formula_extraction_2(chemical_formula)
-	--should only consist of the first 3 items, with an optional 4th
-	local red, green, blue, alpha, comb = 0,0,0,0,0
-	local ave_denom = #rgb
-  if ave_denom == 2 and rgb[1]==element_colours["c"][1] and rgb[2]==element_colours["h"][1] then
-    --Hydrocarbon only
-    m_c = tonumber(multi[1])
-    m_h = tonumber(multi[2])
-    m_t = m_c+m_h
-    for i,j in pairs({"r", "g", "b"}) do
-      --if multi[1]>=8 then multi[1] = 8 end
-      color[j] = ((m_h-m_c)*0.899+m_c*0.01)/(m_h)--maxreader proposed:(6-multi[1])/6*255+10*(multi[2]/multi[1])
-    end 
-  else --everything else
-    for i,colour in pairs(rgb) do
-      alpha = colour[4] or 1
-      red = red + ((colour[1]/255)^2 * tonumber(multi[i])*alpha)
-      green = green + ((colour[2]/255)^2 * tonumber(multi[i])*alpha)
-      blue = blue + ((colour[3]/255)^2 * tonumber(multi[i])*alpha)
-      comb = comb + tonumber(multi[i]*alpha)
+if not mods["angelsrefining"] then --use angels if avail
+
+  function angelsmods.functions.fluid_color(chemical_formula)--parse as label number, label number (example H2,O3,C5, not C5O3H2)
+    local color = {}
+    local rgb = formula_extraction_1(chemical_formula)
+    local multi = formula_extraction_2(chemical_formula)
+    --should only consist of the first 3 items, with an optional 4th
+    local red, green, blue, alpha, comb = 0,0,0,0,0
+    local ave_denom = #rgb
+    if ave_denom == 2 and rgb[1]==element_colours["c"][1] and rgb[2]==element_colours["h"][1] then
+      --Hydrocarbon only
+      m_c = tonumber(multi[1])
+      m_h = tonumber(multi[2])
+      m_t = m_c+m_h
+      for i,j in pairs({"r", "g", "b"}) do
+        --if multi[1]>=8 then multi[1] = 8 end
+        color[j] = ((m_h-m_c)*0.899+m_c*0.01)/(m_h)--maxreader proposed:(6-multi[1])/6*255+10*(multi[2]/multi[1])
+      end 
+    else --everything else
+      for i,colour in pairs(rgb) do
+        alpha = colour[4] or 1
+        red = red + ((colour[1]/255)^2 * tonumber(multi[i])*alpha)
+        green = green + ((colour[2]/255)^2 * tonumber(multi[i])*alpha)
+        blue = blue + ((colour[3]/255)^2 * tonumber(multi[i])*alpha)
+        comb = comb + tonumber(multi[i]*alpha)
+      end
+      color = {r = math.sqrt(red/comb), g = math.sqrt(green/comb), b = math.sqrt(blue/comb), a = 1}
+        --normalise
+      HSV = CL.RGBtoHSV(color)
+      HSV.v = 0.8*HSV.v
+      HSV.s = 1-0.60*(1-HSV.s)
+      color = CL.HSVtoRGB(HSV)
     end
-    color = {r = math.sqrt(red/comb), g = math.sqrt(green/comb), b = math.sqrt(blue/comb), a = 1}
-      --normalise
-    HSV = CL.RGBtoHSV(color)
-    HSV.v = 0.8*HSV.v
-    HSV.s = 1-0.60*(1-HSV.s)
-    color = CL.HSVtoRGB(HSV)
+    return color
   end
-  return color
 end
