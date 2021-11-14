@@ -1,10 +1,8 @@
-if not ASE then ASE={} end
-if not ASE.functions then ASE.functions={} end
 function ASE.functions.ReplaceRollIcons(metal)
-  local RollItem=data.raw.item["angels-roll-"..metal]
-  local RollConvRecipe=data.raw.recipe["angels-roll-"..metal.."-converting"]
-  local RollCreateRecipe=data.raw.recipe["angels-roll-"..metal.."-casting"]
-  local RollCreateRecipe2=data.raw.recipe["angels-roll-"..metal.."-casting-fast"]
+  local RollItem = data.raw.item["angels-roll-"..metal]
+  local RollConvRecipe = data.raw.recipe["angels-roll-"..metal.."-converting"]
+  local RollCreateRecipe = data.raw.recipe["angels-roll-"..metal.."-casting"]
+  local RollCreateRecipe2 = data.raw.recipe["angels-roll-"..metal.."-casting-fast"]
   --these icons are stored locally
   if metal=="brass" or metal=="bronze" or metal=="nitinol" or metal=="tungsten" or metal=="invar" or metal=="gunmetal" or metal=="cobalt-steel" then
     RollItem.icons={

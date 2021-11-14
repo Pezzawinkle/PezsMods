@@ -1,6 +1,6 @@
 require("prototypes.data-tables")
 -- Plates (rolls)
-for metal,properties in pairs(coil_metals) do
+for metal,properties in pairs(ASE.tables.coil_metals) do
   --pull unique properties
   if properties.ing_1 then
     ing_1 = properties.ing_1

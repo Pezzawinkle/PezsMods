@@ -1,4 +1,3 @@
-require("prototypes.data-tables")
 -- IRONWORKS
 
 --SET-UP BASE CASTING RECIPES TO COPY LATER
@@ -40,7 +39,7 @@ data:extend(
 -- bobs pipe casting
 if mods["boblogistics"] and mods["bobplates"] then
   --call pipe metal types (metal_tab)
-  for n,metal in pairs(metal_tab) do
+  for n,metal in pairs(ASE.tables.metal_tab) do
     --metal straight pipes
     local m_pipe = table.deepcopy(data.raw.recipe["angels-iron-pipe-casting"])
 
@@ -297,7 +296,7 @@ data:extend(
   },
 })
 if mods["bobplates"] then
-for n,metal in pairs(gears) do
+for n,metal in pairs(ASE.tables.gears) do
     -- regular casting
     local m_gear1 = table.deepcopy(data.raw.recipe["angels-iron-gear-wheel-casting"])
 
@@ -353,7 +352,7 @@ end
 --ANGELS COMPONENT PARTS
 if mods["angelsindustries"] and (settings.startup["angels-enable-components"].value or settings.startup["angels-enable-tech"].value) then
 
-  for item,i in pairs(a_inters) do
+  for item,i in pairs(ASE.tables.a_inters) do
     local ico_name = {}
     if i.icon then
       ico_name = i.icon

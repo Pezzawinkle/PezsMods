@@ -1,6 +1,6 @@
 require("prototypes.data-tables")
 if mods["angelsindustries"] and angelsmods.industries.components then
-    for n, item in pairs(shielding) do
+    for n, item in pairs(ASE.tables.shielding) do
         data:extend({
             {
                 type = "item",
