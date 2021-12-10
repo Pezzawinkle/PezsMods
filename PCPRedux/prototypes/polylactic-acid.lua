@@ -38,7 +38,7 @@ if data.raw.item["temperate-garden"] then
         {type="item", name="solid-compost", amount=1},
       },
       order = "h",
-      icons =angelsmods.functions.create_liquid_recipe_icon({"liquid-lactic-acid"},"coh"),--generate_fluid_recipe_icons("lactic_acid","coh","liq"),
+      icons =angelsmods.functions.create_liquid_recipe_icon({"liquid-lactic-acid"},"COH"),--generate_fluid_recipe_icons("lactic_acid","coh","liq"),
       crafting_machine_tint = angelsmods.functions.get_fluid_recipe_tint("liquid-lactic-acid"),
     },
     {
