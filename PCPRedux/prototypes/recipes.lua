@@ -3,7 +3,7 @@ local function create_icon(name, number_icon_layer)
 end
 
 data:extend({
-	{
+	{--
 		type = "recipe",
 		name = "liquid-plastic-abs",
 		category = "advanced-chemistry",
@@ -35,7 +35,7 @@ data:extend({
 		icon_size = 32,
 		order = "a[plastic]-a[liquid]-da",
 	},
-	{
+	{--
 		type = "recipe",
 		name = "liquid-plastic-pc",
 		category = "chemistry",
@@ -59,7 +59,7 @@ data:extend({
 		}),
 		crafting_machine_tint = angelsmods.functions.get_fluid_recipe_tint("liquid-plastic"),
 	},
-	{
+	{--
 		type = "recipe",
 		name = "liquid-plastic-pvc",
 		category = "chemistry",
@@ -89,7 +89,7 @@ data:extend({
 		crafting_machine_tint = angelsmods.functions.get_fluid_recipe_tint("liquid-plastic"),
 		icon_size = 32,
 	},
-	{
+	{--
 		type = "recipe",
 		name = "pmma-synthesis",
 		category = "chemistry",
@@ -108,7 +108,7 @@ data:extend({
 		crafting_machine_tint = angelsmods.functions.get_fluid_recipe_tint("liquid-methyl-methacrylate"),
 		order = "i[pmma-synthesis]",
 	},
-	{
+	{--
 		type = "recipe",
 		name = "pc-synthesis",
 		category = "chemistry",
@@ -128,7 +128,7 @@ data:extend({
 		icon_size = 32,
 		order = "j[pc-synthesis]",
 	},
-	{
+	{--
 		type = "recipe",
 		name = "acrylonitrile-synthesis",
 		category = "chemistry",
@@ -149,7 +149,7 @@ data:extend({
 		crafting_machine_tint = angelsmods.functions.get_fluid_recipe_tint("liquid-acrylonitrile"),
 		order = "j[acryllonitrile-synthesis]",
 	},
-	{
+	{--
 		type = "recipe",
 		name = "vinyl-chloride-synthesis",
 		category = "chemistry",
@@ -171,7 +171,7 @@ data:extend({
 		crafting_machine_tint = angelsmods.functions.get_fluid_recipe_tint("gas-vinyl-chloride"),
 		order = "j",
 	},
-	{
+	{--
 		type = "recipe",
 		name = "acetone-cyanohydrin-synthesis",
 		category = "chemistry",
@@ -190,7 +190,7 @@ data:extend({
 		crafting_machine_tint = angelsmods.functions.get_fluid_recipe_tint("liquid-acetone-cyanohydrin"),
 		order = "m[acetone-cyanohydrin-synthesis]",
 	},
-	{
+	{--
 		type = "recipe",
 		name = "methyl-methacrylate-synthesis",
 		category = "advanced-chemistry",
@@ -211,7 +211,7 @@ data:extend({
 		crafting_machine_tint = angelsmods.functions.get_fluid_recipe_tint("liquid-methyl-methacrylate"),
 		order = "f",
 	},
-	{
+	{ --alt already exists
 		type = "recipe",
 		name = "phosgene-synthesis",
 		category = "chemistry",
@@ -230,7 +230,7 @@ data:extend({
 		crafting_machine_tint = angelsmods.functions.get_fluid_recipe_tint("gas-phosgene"),
 		order = "k[phosgene-synthesis]",
 	},
-	{
+	{--
 		type = "recipe",
 		name = "nitrous-oxide-synthesis-1",
 		category = "advanced-chemistry",
@@ -253,7 +253,7 @@ data:extend({
 		crafting_machine_tint = angelsmods.functions.get_fluid_recipe_tint("gas-nitrous-oxide"),
 		order = "k[nitrous-oxide-synthesis-1]",
 	},
-	{
+	{--
 		type = "recipe",
 		name = "nitrous-oxide-synthesis-2",
 		category = "chemistry",
@@ -272,7 +272,7 @@ data:extend({
 		crafting_machine_tint = angelsmods.functions.get_fluid_recipe_tint("gas-nitrous-oxide"),
 		order = "l[nitrous-oxide-synthesis-2]",
 	},
-	{
+	{--
 		type = "recipe",
 		name = "sodium-nitrate-synthesis",
 		category = "liquifying",
@@ -290,7 +290,7 @@ data:extend({
 		crafting_machine_tint = angelsmods.functions.get_fluid_recipe_tint("solid-sodium-nitrate"--[[ or "liquid-nitric-acid"]]),
 		order = "i[sodium-nitrate-synthesis]",
 	},
-	{
+	{--
 		type = "recipe",
 		name = "hydrogen-cyanide-synthesis",
 		category = "advanced-chemistry",
@@ -311,7 +311,7 @@ data:extend({
 		crafting_machine_tint = angelsmods.functions.get_fluid_recipe_tint("gas-hydrogen-cyanide"),
 		order = "l"
 	},
-	{
+	{--
 		type = "recipe",
 		name = "liquid-plastic-pmma",
 		category = "chemistry",
@@ -341,7 +341,7 @@ data:extend({
 		crafting_machine_tint = angelsmods.functions.get_fluid_recipe_tint("liquid-plastic"),
 		icon_size = 32,
 	},
-	{
+	{--
 		type = "recipe",
 		name = "catalyst-metal-cyan",
 		category = "crafting",
@@ -360,7 +360,7 @@ data:extend({
 		icon_size = 32,
 		order = "e[catalyst-metal-cyan]",
 	},
-	{
+	{--
 		type = "recipe",
 		name = "liquid-fuel-oil-catalyst",
 		category = "advanced-chemistry",
