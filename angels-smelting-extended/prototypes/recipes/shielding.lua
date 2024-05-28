@@ -137,7 +137,7 @@ if mods["angelsindustries"] and angelsmods.industries.components then
   add_cutting_recipe("platinum", 5)
 end
 
-if angelsmods.trigger.smelting_products["tin"].wire --[[data.raw.item["insulated-cable"] ]]then --indicates bobelectronics and plates
+if angelsmods.trigger.smelting_products["tin"].wire and data.raw.item["insulated-cable"] then --indicates bobelectronics and plates
   local count = 16
   local ings = data.raw.recipe["insulated-cable"].ingredients
   if ings[1] and ings[1].amount then
