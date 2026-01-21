@@ -512,10 +512,8 @@ data:extend({{
   type = "recipe",
   name = "plaswall",
   enabled = false,
-  ingredients = {{"plastic-bar", 3},{"stone-brick",2}},
-  result = "plaswall"
+  ingredients = {{type="item", name="plastic-bar", amount=3}, {type="item", name="stone-brick", amount=2}},
+  results = {{type="item", name="plaswall", amount=1}},
 }})
-local addTech = function (technology, recipe)
-    table.insert(data.raw.technology[technology].effects,{type = "unlock-recipe", recipe = recipe})
-end
-addTech("plastics",            "plaswall")
+
+angelsmods.functions.OV.add_unlock("plastics", "plaswall")

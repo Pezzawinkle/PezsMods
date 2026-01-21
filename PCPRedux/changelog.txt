@@ -1,4 +1,8 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.1.0
+  Changes:
+    - Updated to 2.0
+---------------------------------------------------------------------------------------------------
 Version: 1.0.4
   Changes:
     - Update to comply with angels library changes
@@ -125,7 +129,7 @@ Version: 0.0.23
       i plan on expanding and integrating this more as i update the mod
       generate_fluid_icons(fluid,formcode,state)
         - fluid must not have gas/liquid in front, and must contain _ in place of - (table formatting was a pain, sorry)
-          example: gas-hydrogen-chloride needs to be written as "hydrogen_chloride"
+          example: angels-gas-hydrogen-chloride needs to be written as "hydrogen_chloride"
         - formcode is a 3 letter code that gives colouring for the background icon (see top of function file for code, i may expand this later)
         - state is either empty (for the oil separation style), "gas" (for the more spaced icons like acid-gas), "liq" (for the most common set)
 ---------------------------------------------------------------------------------------------------

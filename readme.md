@@ -30,6 +30,7 @@ A special thanks to [p.o.d](https://mods.factorio.com/user/p.o.d) for the origin
 
 ## Petrochem Plus Redux (PCP REDUX)
 A special thanks to [kinnom](https://mods.factorio.com/user/kinnom) for the original concept and backbone of the earlier versions of this mod. Other thanks go to [Arch666Angel](https://mods.factorio.com/user/Arch666Angel) for the awesome series of mods for which this expands. And a special thanks to anyone whose name ends up in the changelog for patches, bug reports and contributing to making this mod get to the point it currently is.
+Flask sprites from Quality Glassware by Hornwitser is licenced under CC BY-SA 4.
 - I. Requires at a minimum angels petrochem, as this uses angels buildings and recipe categories
 - II. Fully functional with bobs plates, and full angels
 - III. Partial support for APM, Pyanodons and some other mods
