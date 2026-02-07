@@ -1,7 +1,7 @@
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.0
   Changes:
-    - Updated to 2.0
+    - Updated to 2.0 [mostly processed by AdamCirillo]
 ---------------------------------------------------------------------------------------------------
 Version: 1.0.4
   Changes:
@@ -207,7 +207,7 @@ Version: 0.0.11
 Version: 0.0.10
   Bugfixes:
     - Fixed a few problems
-    - locale fixes
+    - language updates
     - defaulted glass sinc
   Balancing:
     - added productivity for recipes
