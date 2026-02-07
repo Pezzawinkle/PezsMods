@@ -463,7 +463,7 @@ add chlorobutadiene polymerisation chlorobutadiene-->liquid rubber]]
       prerequisites =
       {
         "angels-rubber",
-        "angels-bio-arboretum-1"
+        angelsmods.bioprocessing and "angels-bio-arboretum-1" or nil
       },
       effects =
       {
