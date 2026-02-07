@@ -61,11 +61,17 @@ if data.raw.item["bob-zinc-ore"] and data.raw.item["bob-gold-ore"] then
 		{ type = "item", name = "bob-zinc-ore",                  amount = 1 },
 		{ type = "item", name = "bob-gold-ore",                  amount = 1 },
 	}
-else
+elseif data.raw.item["angels-zinc-ore"] then
 	data.raw.recipe["catalyst-metal-cyan"].ingredients = {
 		{ type = "item", name = "angels-catalyst-metal-carrier", amount = 10 },
 		{ type = "item", name = "angels-zinc-ore",               amount = 1 },
 		{ type = "item", name = "angels-bauxite-ore",            amount = 1 },
+	}
+else --only petrochem
+	data.raw.recipe["catalyst-metal-cyan"].ingredients = {
+		{ type = "item", name = "angels-catalyst-metal-carrier", amount = 10 },
+		{ type = "item", name = "angels-ore1",               amount = 1 },
+		{ type = "item", name = "angels-ore4",            amount = 1 },
 	}
 end
 if data.raw.item["ap-bullet-projectile"] then
