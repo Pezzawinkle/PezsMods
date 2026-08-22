@@ -1,4 +1,13 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.0.01
+Date: 22.08.2026
+  Features:
+    - Now compatible with version 2.0
+    - updated to match the updated bobs pipe options
+    - added ability to sinter for ceramic pipes
+    - removed the molten blending recipes which were impossible to balance
+      these were behind a setting in previous versions
+---------------------------------------------------------------------------------------------------
 Version: 1.0.14
 Date: 28.05.2024
   Bugfixes:

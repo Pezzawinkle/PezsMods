@@ -45,7 +45,7 @@ if mods["bobplates"] then
     {
       type = "technology",
       name = "angels-alloys-smelting-1",
-      icon = "__angelssmelting__/graphics/technology/casting-bronze-tech.png",
+      icon = "__angelssmeltinggraphics__/graphics/technology/casting-bronze-tech.png",
       icon_size = 256,
       upgrade = true,
       prerequisites =
@@ -53,7 +53,7 @@ if mods["bobplates"] then
         "angels-copper-smelting-1",
         "angels-tin-smelting-1",
         "angels-zinc-smelting-1",
-        "alloy-processing",
+        "bob-alloy-processing",
       },
       effects =
       {
@@ -75,7 +75,7 @@ if mods["bobplates"] then
     {
       type = "technology",
       name = "angels-alloys-smelting-2",
-      icon = "__angelssmelting__/graphics/technology/casting-gunmetal-tech.png",
+      icon = "__angelssmeltinggraphics__/graphics/technology/casting-gunmetal-tech.png",
       icon_size = 256,
       upgrade = true,
       prerequisites =
@@ -107,7 +107,7 @@ if mods["bobplates"] then
     {
       type = "technology",
       name = "angels-alloys-smelting-3",
-      icon = "__angelssmelting__/graphics/technology/casting-cobalt-steel-tech.png",
+      icon = "__angelssmeltinggraphics__/graphics/technology/casting-cobalt-steel-tech.png",
       icon_size = 256,
       upgrade = true,
       prerequisites =
@@ -299,8 +299,8 @@ if mods["bobplates"] then
         upgrade = true,
         prerequisites =
         {
-          "nitinol-processing",
-          "tungsten-processing",
+          "bob-nitinol-processing",
+          "bob-tungsten-processing",
           "angels-ironworks-4"
         },
         effects =

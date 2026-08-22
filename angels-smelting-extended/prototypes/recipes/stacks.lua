@@ -4,12 +4,12 @@ if mods["angelsindustries"] and angelsmods.industries.components then
         {
             type = "recipe",
             name = "girder-stack-casting",
-            category = "strand-casting",
+            category = "angels-strand-casting",
             subgroup = "angels-iron-casting",
             energy_required = 4,
             enabled = false,
             ingredients = {
-                { type = "fluid", name = "liquid-molten-iron", amount = 60 },
+                { type = "fluid", name = "angels-liquid-molten-iron", amount = 60 },
                 { type = "fluid", name = "water", amount = 40 }
             },
             results =
@@ -20,18 +20,18 @@ if mods["angelsindustries"] and angelsmods.industries.components then
         {
             type = "recipe",
             name = "girder-stack-casting-fast",
-            category = "strand-casting",
+            category = "angels-strand-casting",
             subgroup = "angels-iron-casting",
             energy_required = 2,
             enabled = false,
             ingredients = {
-                { type = "fluid", name = "liquid-molten-iron", amount = 110 },
-                { type = "fluid", name = "liquid-coolant", amount = 40, maximum_temperature = 50 }
+                { type = "fluid", name = "angels-liquid-molten-iron", amount = 110 },
+                { type = "fluid", name = "angels-liquid-coolant", amount = 40, maximum_temperature = 50 }
             },
             results =
             {
                 { type = "item", name = "angels-girder-stack", amount = 4 },
-                { type = "fluid", name = "liquid-coolant-used", amount = 40, temperature = 300 }
+                { type = "fluid", name = "angels-liquid-coolant-used", amount = 40, temperature = 300 }
             },
             main_product = "angels-girder-stack"
         },

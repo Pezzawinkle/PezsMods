@@ -14,7 +14,7 @@ if data.raw.item["bob-glass"] then
         results = {
           { type = "item", name = "bob-glass", amount = 10 },
         },
-        crafting_machine_tint = angelsmods.functions.get_fluid_recipe_tint("liquid-molten-glass"),
+        crafting_machine_tint = angelsmods.functions.get_fluid_recipe_tint("angels-liquid-molten-glass"),
         --icon = "",
         order = "c[glass]-b[pmma-glass]",
       },
@@ -34,7 +34,7 @@ if data.raw.item["bob-glass"] then
         --icon = "",
         order = "c[glass]-a[pc-glass]",
       },
-      crafting_machine_tint = angelsmods.functions.get_fluid_recipe_tint("liquid-molten-glass"),
+      crafting_machine_tint = angelsmods.functions.get_fluid_recipe_tint("angels-liquid-molten-glass"),
     })
   angelsmods.functions.allow_productivity("pc-glass")
   angelsmods.functions.allow_productivity("pmma-glass")

@@ -19,6 +19,5 @@ require("prototypes.recipes.compressing-extended")
 require("prototypes.recipes.ironworks")
 require("prototypes.recipes.shielding")
 require("prototypes.recipes.stacks")
-require("prototypes.recipes.smelting-alloys-extended")
 
 require("prototypes.technology.smelting-extended")

@@ -1,6 +1,6 @@
 ASE.tables.coil_metals = {
     --as much as i would love to do the commented out ones... id need to think on how to do the powder/plastic systems
-    ["tungsten"] = { tint = { r = 136 / 255, g = 98 / 255, b = 65 / 255 }, ing_1 = { type = "fluid", name = "gas-tungsten-hexafluoride", amount = 20 } },
+    ["tungsten"] = { tint = { r = 136 / 255, g = 98 / 255, b = 65 / 255 }, ing_1 = { type = "fluid", name = "angels-gas-tungsten-hexafluoride", amount = 20 } },
 }
 if mods["bobplates"] then
     ASE.tables.coil_metals["brass"] = angelsmods.trigger.smelting_products["brass"] and { tint = { r = 204 / 256, g = 153 / 256, b = 102 / 256 } } or nil
@@ -13,16 +13,17 @@ end
 ASE.tables.metal_tab = {
     --as much as i would love to do the commented out ones... id need to think on how to do the powder systems
     "copper",
-    "stone",
+    --"stone",-- seems to have been removed from pipes
     "steel",
     "plastic",
-    --"ceramic",
+    "ceramic",--"silicon-nitride",
     "titanium",
     "brass",
     "bronze",
     "tungsten",
     "copper-tungsten",
-    "nitinol"
+    --"nitinol" -- seems to have been removed from pipes
+    
 }
 ASE.tables.gears = {
     "steel",

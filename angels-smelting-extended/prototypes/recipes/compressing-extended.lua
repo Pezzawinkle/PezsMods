@@ -7,7 +7,7 @@ for metal,properties in pairs(ASE.tables.coil_metals) do
     --adjust amount for tier 2 recipe
     ing_2 = table.deepcopy(ing_1)
   else
-    ing_1 = {type = "fluid", name = "liquid-molten-"..metal, amount = 80}
+    ing_1 = {type = "fluid", name = "angels-liquid-molten-"..metal, amount = 80}
     ing_2 = table.deepcopy(ing_1)
   end
   ing_2.amount = ing_2.amount*1.75 --140/80 7/4
@@ -22,10 +22,10 @@ for metal,properties in pairs(ASE.tables.coil_metals) do
     {
       type = "recipe",
       name = "angels-roll-"..metal.."-casting",
-      category = "strand-casting",
+      category = "angels-strand-casting",
       subgroup = sgrp,
       energy_required = 4,
-      enabled = "false",
+      enabled = false,
       localised_name = {"recipe-name.casting", {"lookup."..metal}},
       icons = angelsmods.functions.add_number_icon_layer({
         {
@@ -50,7 +50,7 @@ for metal,properties in pairs(ASE.tables.coil_metals) do
       category = "advanced-crafting",
       subgroup = sgrp,
       energy_required = 0.5,
-      enabled = "false",
+      enabled = false,
       ingredients = {
         {type = "item", name = "angels-roll-"..metal, amount = 1}
       },
@@ -60,7 +60,8 @@ for metal,properties in pairs(ASE.tables.coil_metals) do
       },
       icons = {
         {
-          icon = "__angelssmelting__/graphics/icons/plate-"..metal..".png"
+          icon = "__angelssmeltinggraphics__/graphics/icons/plate-"..metal..".png",
+          icon_size = 32
         },
         {
           icon = "__angels-smelting-extended__/graphics/icons/roll-blank.png",
@@ -76,19 +77,19 @@ for metal,properties in pairs(ASE.tables.coil_metals) do
     {
       type = "recipe",
       name = "angels-roll-"..metal.."-casting-fast",
-      category = "strand-casting",
+      category = "angels-strand-casting",
       subgroup = sgrp,
       energy_required = 2,
-      enabled = "false",
+      enabled = false,
       localised_name = {"recipe-name.casting", {"lookup."..metal}},
       ingredients = {
         ing_2,
-        {type = "fluid", name = "liquid-coolant", amount = 40},
+        {type = "fluid", name = "angels-liquid-coolant", amount = 40},
       },
       results =
       {
         {type = "item", name = "angels-roll-"..metal, amount = 4},
-        {type = "fluid", name = "liquid-coolant-used", amount = 40, temperature = 300, catalyst_amount = 40}
+        {type = "fluid", name = "angels-liquid-coolant-used", amount = 40, temperature = 300, catalyst_amount = 40}
       },
       icons = angelsmods.functions.add_number_icon_layer({
         {

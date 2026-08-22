@@ -3,13 +3,13 @@ local function add_water_casting_recipe(metal)
     {
       type = "recipe",
       name = "angels-shielding-coil-" .. metal .. "-casting",
-      category = "strand-casting",
+      category = "angels-strand-casting",
       subgroup = "angels-" .. metal .. "-casting" or "angels-alloys-casting",
       energy_required = 4,
       enabled = false,
       ingredients = {
-        { type = "fluid", name = "liquid-molten-" .. metal, amount = 40 },
-        { type = "fluid", name = "liquid-molten-copper", amount = 40 },
+        { type = "fluid", name = "angels-liquid-molten-" .. metal, amount = 40 },
+        { type = "fluid", name = "angels-liquid-molten-copper", amount = 40 },
         { type = "fluid", name = "water", amount = 40 }
       },
       results =
@@ -26,19 +26,19 @@ local function add_coolant_casting_recipe(metal)
     {
       type = "recipe",
       name = "angels-shielding-coil-" .. metal .. "-casting-fast",
-      category = "strand-casting",
+      category = "angels-strand-casting",
       subgroup = "angels-" .. metal .. "-casting" or "angels-alloys-casting",
       energy_required = 2,
       enabled = false,
       ingredients = {
-        { type = "fluid", name = "liquid-molten-" .. metal, amount = 70 },
-        { type = "fluid", name = "liquid-molten-copper", amount = 70 },
-        { type = "fluid", name = "liquid-coolant", amount = 40 }
+        { type = "fluid", name = "angels-liquid-molten-" .. metal, amount = 70 },
+        { type = "fluid", name = "angels-liquid-molten-copper", amount = 70 },
+        { type = "fluid", name = "angels-liquid-coolant", amount = 40 }
       },
       results =
       {
         { type = "item", name = "angels-shielding-coil-" .. metal, amount = 8 },
-        { type = "fluid", name = "liquid-coolant-used", amount = 40, temperature = 300 }
+        { type = "fluid", name = "angels-liquid-coolant-used", amount = 40, temperature = 300 }
       },
       main_product = "angels-shielding-coil-" .. metal,
       icons = angelsmods.functions.add_number_icon_layer(angelsmods.functions.get_object_icons("angels-shielding-coil-" .. metal), 2 , angelsmods.smelting.number_tint),
@@ -78,12 +78,12 @@ if mods["angelsindustries"] and angelsmods.industries.components then
     {
       type = "recipe",
       name = "angels-shielding-coil-copper-casting",
-      category = "strand-casting",
+      category = "angels-strand-casting",
       subgroup = "angels-copper-casting",
       energy_required = 4,
       enabled = false,
       ingredients = {
-        { type = "fluid", name = "liquid-molten-copper", amount = 80 },
+        { type = "fluid", name = "angels-liquid-molten-copper", amount = 80 },
         { type = "fluid", name = "water", amount = 40 }
       },
       results =
@@ -99,18 +99,18 @@ if mods["angelsindustries"] and angelsmods.industries.components then
     {
       type = "recipe",
       name = "angels-shielding-coil-copper-casting-fast",
-      category = "strand-casting",
+      category = "angels-strand-casting",
       subgroup = "angels-copper-casting",
       energy_required = 2,
       enabled = false,
       ingredients = {
-        { type = "fluid", name = "liquid-molten-copper", amount = 140 },
-        { type = "fluid", name = "liquid-coolant", amount = 40 }
+        { type = "fluid", name = "angels-liquid-molten-copper", amount = 140 },
+        { type = "fluid", name = "angels-liquid-coolant", amount = 40 }
       },
       results =
       {
         { type = "item", name = "angels-shielding-coil-copper", amount = 8 },
-        { type = "fluid", name = "liquid-coolant-used", amount = 40, temperature = 300 }
+        { type = "fluid", name = "angels-liquid-coolant-used", amount = 40, temperature = 300 }
       },
       main_product = "angels-shielding-coil-copper",
       icons = angelsmods.functions.add_number_icon_layer(angelsmods.functions.get_object_icons("angels-shielding-coil-copper"), 2 , angelsmods.smelting.number_tint),
@@ -153,14 +153,14 @@ if angelsmods.trigger.smelting_products["tin"].wire and data.raw.item["insulated
     {
       type = "recipe",
       name = "angels-wire-coil-insulated-casting",
-      category = "strand-casting",
+      category = "angels-strand-casting",
       subgroup = "angels-insulated-wire-casting",
       energy_required = 4,
       enabled = false,
       ingredients = {
         { type = "fluid", name = "liquid-rubber", amount = 10, fluidbox_index = 4},
-        { type = "fluid", name = "liquid-molten-tin", amount = count * 8, fluidbox_index = 1},
-        { type = "fluid", name = "liquid-molten-copper", amount = count * 8, fluidbox_index = 2},
+        { type = "fluid", name = "angels-liquid-molten-tin", amount = count * 8, fluidbox_index = 1},
+        { type = "fluid", name = "angels-liquid-molten-copper", amount = count * 8, fluidbox_index = 2},
         { type = "fluid", name = "water", amount = 40, fluidbox_index = 3}
       },
       results =
@@ -172,20 +172,20 @@ if angelsmods.trigger.smelting_products["tin"].wire and data.raw.item["insulated
     {
       type = "recipe",
       name = "angels-wire-coil-insulated-casting-fast",
-      category = "strand-casting",
+      category = "angels-strand-casting",
       subgroup = "angels-insulated-wire-casting",
       energy_required = 2,
       enabled = false,
       ingredients = {
         { type = "fluid", name = "liquid-rubber", amount = 18, fluidbox_index = 4},
-        { type = "fluid", name = "liquid-molten-tin", amount = count*14, fluidbox_index = 1},
-        { type = "fluid", name = "liquid-molten-copper", amount = count*14, fluidbox_index = 2},
-        { type = "fluid", name = "liquid-coolant", amount = 40, fluidbox_index = 3}
+        { type = "fluid", name = "angels-liquid-molten-tin", amount = count*14, fluidbox_index = 1},
+        { type = "fluid", name = "angels-liquid-molten-copper", amount = count*14, fluidbox_index = 2},
+        { type = "fluid", name = "angels-liquid-coolant", amount = 40, fluidbox_index = 3}
       },
       results =
       {
         { type = "item", name = "angels-wire-coil-insulated", amount = count*2 },
-        { type = "fluid", name = "liquid-coolant-used", amount = 40, temperature = 300, fluidbox_index = 1}
+        { type = "fluid", name = "angels-liquid-coolant-used", amount = 40, temperature = 300, fluidbox_index = 1}
       },
       main_product = "angels-wire-coil-insulated",
       icons = angelsmods.functions.add_number_icon_layer(angelsmods.functions.get_object_icons("angels-wire-coil-insulated"), 2 , angelsmods.smelting.number_tint),
