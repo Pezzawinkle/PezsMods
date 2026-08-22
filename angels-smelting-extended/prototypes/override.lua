@@ -30,9 +30,9 @@ if angelsmods.trigger.smelting_products["brass"].plate then
     data.raw.recipe["angels-liquid-molten-brass-3"].order = "c"
     data.raw.recipe["angels-plate-brass"].order = "i"
     data.raw.recipe["bob-brass-alloy"].order = "k"
-    angelsmods.functions.OV.add_unlock("angels-liquid-molten-brass-smelting-2", "angels-roll-brass-casting")
-    angelsmods.functions.OV.add_unlock("angels-liquid-molten-brass-smelting-2", "angels-roll-brass-converting")
-    angelsmods.functions.OV.add_unlock("angels-liquid-molten-brass-smelting-3", "angels-roll-brass-casting-fast")
+    angelsmods.functions.OV.add_unlock("angels-alloys-smelting-1", "angels-roll-brass-casting")
+    angelsmods.functions.OV.add_unlock("angels-alloys-smelting-1", "angels-roll-brass-converting")
+    angelsmods.functions.OV.add_unlock("angels-alloys-smelting-2", "angels-roll-brass-casting-fast")
 end
 --Bronze
 if angelsmods.trigger.smelting_products["bronze"].plate then
@@ -46,9 +46,9 @@ if angelsmods.trigger.smelting_products["bronze"].plate then
     data.raw.recipe["angels-liquid-molten-bronze-3"].order = "c"
     data.raw.recipe["angels-plate-bronze"].order = "i"
     data.raw.recipe["bob-bronze-alloy"].order = "k"
-    angelsmods.functions.OV.add_unlock("angels-liquid-molten-bronze-2", "angels-roll-bronze-casting")
-    angelsmods.functions.OV.add_unlock("angels-liquid-molten-bronze-2", "angels-roll-bronze-converting")
-    angelsmods.functions.OV.add_unlock("angels-liquid-molten-bronze-3", "angels-roll-bronze-casting-fast")
+    angelsmods.functions.OV.add_unlock("angels-alloys-smelting-1", "angels-roll-bronze-casting")
+    angelsmods.functions.OV.add_unlock("angels-alloys-smelting-1", "angels-roll-bronze-converting")
+    angelsmods.functions.OV.add_unlock("angels-alloys-smelting-2", "angels-roll-bronze-casting-fast")
 end
 --Invar
 if angelsmods.trigger.smelting_products["invar"].plate then
@@ -70,8 +70,8 @@ if angelsmods.trigger.smelting_products["nitinol"].plate then
     data.raw.recipe["angels-liquid-molten-nitinol"].order = "a"
     data.raw.recipe["angels-plate-nitinol"].order = "i"
     data.raw.recipe["bob-nitinol-alloy"].order = "k"
-    angelsmods.functions.OV.add_unlock("nitinol-processing", "angels-roll-nitinol-casting")
-    angelsmods.functions.OV.add_unlock("nitinol-processing", "angels-roll-nitinol-converting")
+    angelsmods.functions.OV.add_unlock("bob-nitinol-processing", "angels-roll-nitinol-casting")
+    angelsmods.functions.OV.add_unlock("bob-nitinol-processing", "angels-roll-nitinol-converting")
     angelsmods.functions.OV.add_unlock("angels-alloys-smelting-3", "angels-roll-nitinol-casting-fast")
 end
 --Cobalt-Steel
@@ -103,8 +103,8 @@ if mods["boblogistics"] and mods["bobplates"] then
     end
     --patch non compliants
     --plastic
-    angelsmods.functions.OV.add_unlock("plastic-1", "angels-plastic-pipe-casting")
-    angelsmods.functions.OV.add_unlock("plastic-1", "angels-plastic-pipe-to-ground-casting")
+    angelsmods.functions.OV.add_unlock("plastics", "angels-plastic-pipe-casting")
+    angelsmods.functions.OV.add_unlock("plastics", "angels-plastic-pipe-to-ground-casting")
     --Ceramics
     --update ceramic recipes
     angelsmods.functions.OV.add_unlock("bob-ceramics", "angels-ceramic-pipe-casting")
