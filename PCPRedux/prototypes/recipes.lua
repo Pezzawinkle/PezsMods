@@ -2,6 +2,7 @@ local function create_icon(name, number_icon_layer)
 	return angelsmods.functions.add_icon_layer(angelsmods.functions.get_object_icons(name), number_icon_layer)
 end
 
+local sulfuric_acid = data.raw.fluid["angels-liquid-sulfuric-acid"] and "angels-liquid-sulfuric-acid" or "sulfuric-acid"
 data:extend({
 	{ --
 		type = "recipe",
@@ -128,7 +129,7 @@ data:extend({
 		ingredients = {
 			{ type = "fluid", name = "liquid-acetone-cyanohydrin",  amount = 50 },
 			{ type = "fluid", name = "angels-gas-methanol",         amount = 100 },
-			{ type = "fluid", name = "angels-liquid-sulfuric-acid", amount = 50 }
+			{ type = "fluid", name = sulfuric_acid, amount = 50 }
 		},
 		results =
 		{
@@ -170,7 +171,7 @@ data:extend({
 		ingredients = {
 			{ type = "fluid", name = "angels-gas-urea",             amount = 50 },
 			{ type = "fluid", name = "angels-liquid-nitric-acid",   amount = 20 },
-			{ type = "fluid", name = "angels-liquid-sulfuric-acid", amount = 30 }
+			{ type = "fluid", name = sulfuric_acid, amount = 30 }
 		},
 		results =
 		{

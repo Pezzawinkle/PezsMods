@@ -9,6 +9,7 @@ fermentation broth needs to contain ammonia, possibly do an intermediate step
 --Recipe
 --Bacterial-fermentation
 --this process works best with wheaton due to the need for soil in that crop, primdeadadelion leaves excess compost :(
+local sulfuric_acid = data.raw.fluid["angels-liquid-sulfuric-acid"] and "angels-liquid-sulfuric-acid" or "sulfuric-acid"
 if data.raw.item["temperate-garden"] then
   data:extend(
     {
@@ -54,7 +55,7 @@ if data.raw.item["temperate-garden"] then
         },
         results = {
           { type = "fluid", name = "liquid-plastic",          amount = 50 },
-          { type = "fluid", name = "angels-liquid-sulfuric-acid", amount = 100 },
+          { type = "fluid", name = sulfuric_acid, amount = 100 },
         },
         order = "g",
         icons = {
@@ -100,7 +101,7 @@ if data.raw.item["temperate-garden"] then
           { type = "fluid", name = "liquid-fermentation-raw", amount = 100 },
           --added in 0.0.29 at 200 to offset dropping lactic acid requirement drop
           --dropped requirement from 200-100 in 0.0.30
-          { type = "fluid", name = "angels-liquid-sulfuric-acid", amount = 300 },
+          { type = "fluid", name = sulfuric_acid, amount = 300 },
           --initially 500, dropped to 400 in 0.0.29 to offset the loss
           --dropped to 300 in 0.0.30, still a large loss overall
           { type = "fluid", name = "liquid-lactic-acid",      amount = 80 },
