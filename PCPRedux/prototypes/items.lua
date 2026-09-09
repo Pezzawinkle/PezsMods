@@ -48,15 +48,6 @@ data:extend({
   },
   {
     type = "item",
-    name = "solid-sodium-nitrate",
-    icon = "__PCPRedux__/graphics/icons/solid-sodium-nitrate.png",
-    icon_size = 32,
-    subgroup = "angels-petrochem-sodium",
-    order = "a[solid-sodium-nitrate]",
-    stack_size = 100
-  },
-  {
-    type = "item",
     name = "catalyst-metal-cyan",
     icon = "__PCPRedux__/graphics/icons/catalyst-metal-cyan.png",
     icon_size = 32,
@@ -65,6 +56,23 @@ data:extend({
     stack_size = 100
   },
 })
+
+--Angels Petrochem 2.0 renamed its own sodium nitrate to "angels-solid-sodium-nitrate".
+--Declaring the old name would no longer override Angels' item, it would add a second one
+--with the same display name, so keep ours only as a fallback for pre-2.0 Angels.
+if not data.raw.item["angels-solid-sodium-nitrate"] then
+  data:extend({
+    {
+      type = "item",
+      name = "solid-sodium-nitrate",
+      icon = "__PCPRedux__/graphics/icons/solid-sodium-nitrate.png",
+      icon_size = 32,
+      subgroup = "angels-petrochem-sodium",
+      order = "a[solid-sodium-nitrate]",
+      stack_size = 100
+    },
+  })
+end
 --rubbers
 
 if mods.bobplates or mods.apm_resource_pack_ldinc and (data.raw.item["angels-solid-rubber"] or data.raw.item["bob-rubber"]) then

@@ -3,6 +3,7 @@ local function create_icon(name, number_icon_layer)
 end
 
 local sulfuric_acid = data.raw.fluid["angels-liquid-sulfuric-acid"] and "angels-liquid-sulfuric-acid" or "sulfuric-acid"
+local sodium_nitrate = data.raw.item["angels-solid-sodium-nitrate"] and "angels-solid-sodium-nitrate" or "solid-sodium-nitrate"
 data:extend({
 	{ --
 		type = "recipe",
@@ -195,7 +196,7 @@ data:extend({
 		enabled = false,
 		ingredients = {
 			{ type = "item", name = "solid-ammonium-sulphate", amount = 5 },
-			{ type = "item", name = "solid-sodium-nitrate",    amount = 5 },
+			{ type = "item", name = sodium_nitrate,           amount = 5 },
 		},
 		results =
 		{
@@ -219,10 +220,10 @@ data:extend({
 		},
 		results =
 		{
-			{ type = "item", name = "solid-sodium-nitrate", amount = 10 }
+			{ type = "item", name = sodium_nitrate, amount = 10 }
 		},
 		crafting_machine_tint = angelsmods.functions.get_fluid_recipe_tint(
-			"solid-sodium-nitrate" --[[ or "angels-liquid-nitric-acid"]]),
+			sodium_nitrate --[[ or "angels-liquid-nitric-acid"]]),
 		order = "i[sodium-nitrate-synthesis]",
 	},
 	{ --
